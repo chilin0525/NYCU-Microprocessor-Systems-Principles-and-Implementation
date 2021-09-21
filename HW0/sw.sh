@@ -14,9 +14,6 @@ cd /opt/ \
     && wget ${gcc_pre_compilted} \
     && tar -xzvf riscv32_gcc.tgz \
     && rm -rf riscv32_gcc.tgz \
-    && echo "export PATH=$PATH:/opt/riscv/bin" >> ~/.bashrc \
-    && source ~/.bashrc
 
-# check PATH is including /opt/riscv/bin, 
-# if not, just source again
-echo $PATH
+echo "export PATH=$PATH:/opt/riscv/bin" >> ~/.bashrc \
+    && source ~/.bashrc
