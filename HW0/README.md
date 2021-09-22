@@ -35,3 +35,9 @@ I recorded the process of building the environment for this class in detail. My 
 
 ref to ```sw.sh```. If you encounter some issues when execute ```echo "export PATH=$PATH:/opt/riscv/bin" >> ~/.bashrc \
     && source ~/.bashrc```, you can execute by yourself. It is important to check whether ```/opt/riscv/bin``` exist in ```$PATH``` or not.
+
+## HW0
+
+### terminology
+
+1. Dhrystone: 測試 CPU 性能的 benchmark, 測試方法為單位時間內跑了多少次 Dhrystone 程式, 指標單位為 DMIPS/MHz, 其中 DMIPS 為 Dhrystone Million Instructions Per Second
