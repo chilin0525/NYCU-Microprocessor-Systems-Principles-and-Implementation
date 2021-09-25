@@ -1,17 +1,24 @@
 # ======================================================================
 #  This Makefile builds an application *.ebf file for Aquila.
 #
-#  Chun-Jen Tsai, Jan/12/2020
+#  Original Author: Chun-Jen Tsai, Jan/12/2020
+#  updated by: Chilin Chiou 
 # ======================================================================
 
 CROSS = riscv32-unknown-elf
-CCPATH = $(RISCV)/bin
+# CCPATH = $(RISCV)/bin
 
-CC = $(CCPATH)/$(CROSS)-gcc
-LD = $(CCPATH)/$(CROSS)-ld
-AR = $(CCPATH)/$(CROSS)-ar
-OC = $(CCPATH)/$(CROSS)-objcopy
-OD = $(CCPATH)/$(CROSS)-objdump
+# CC = $(CCPATH)/$(CROSS)-gcc
+# LD = $(CCPATH)/$(CROSS)-ld
+# AR = $(CCPATH)/$(CROSS)-ar
+# OC = $(CCPATH)/$(CROSS)-objcopy
+# OD = $(CCPATH)/$(CROSS)-objdump
+
+CC = $(CROSS)-gcc
+LD = $(CROSS)-ld
+AR = $(CROSS)-ar
+OC = $(CROSS)-objcopy
+OD = $(CROSS)-objdump
 
 LIBC = ../elibc
 LIBC_OBJS = $(LIBC)/crt0.o $(LIBC)/stdio.o $(LIBC)/stdlib.o $(LIBC)/string.o $(LIBC)/time.o $(LIBC)/uart.o
