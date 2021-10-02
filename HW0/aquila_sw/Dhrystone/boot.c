@@ -1,15 +1,14 @@
-/*
 // =============================================================================
-//  Program : dhry.ld
+//  Program : boot.c
 //  Author  : Chun-Jen Tsai
 //  Date    : Jan/14/2020
+// =============================================================================
+//  This is the entry point of the boot code. Must be located at the
+//  beginning of the text section in the linker script.
 // -----------------------------------------------------------------------------
 //  Revision information:
 //
 //  None.
-// -----------------------------------------------------------------------------
-//  Description:
-//  This is the linker script of a program compiled to run from DDRx memory.
 // -----------------------------------------------------------------------------
 //  License information:
 //
@@ -52,31 +51,24 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 // =============================================================================
-*/
-__heap_start = 0x0000A000;
-__heap_size  = 0x00005000;
-__stack_top  = 0x0000FFF0;
+#include "dhry.h"
 
-MEMORY
+extern int main(void);
+
+extern unsigned int __stack_top; /* declared in the linker script */
+unsigned int stack_top2 = (unsigned int) &__stack_top;
+
+void
+boot(void)
 {
-    code_ram   (rx!rw) : ORIGIN = 0x00001000, LENGTH = 0x5000
-    data_ram   (rw!x)  : ORIGIN = 0x00006000, LENGTH = 0x4000
+    // Set the stack pointer. The application expects the top of stack
+    // to be located at __stack_top. We must physically assign
+    // __stack_top to sp before we run the boot loader.
+    asm volatile("lui t0, %hi(stack_top2)");
+    asm volatile("lw  sp, %lo(stack_top2)(t0)");
+    main();
+
+    // Halt the processor.
+    exit(0);
 }
 
-ENTRY(crt0)
-
-SECTIONS
-{
-    .text :
-    {
-        boot.o(.text)
-        *(.text)
-    } > code_ram
-
-    .data :
-    {
-        *(.data)
-        *(.bss)
-        *(.rodata*)
-    } > data_ram
-}

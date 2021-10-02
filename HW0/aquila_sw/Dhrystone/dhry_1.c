@@ -20,7 +20,7 @@
 #include <time.h>
 #include "dhry.h"
 
-#define PRINT_MSG 1
+#define PRINT_MSG 0
 
 /* Global Variables: */
 
@@ -57,8 +57,13 @@ float           Microseconds,
                 Vax_Mips;
 /* end of variables for time measurement */
 
-main ()
-/*****/
+void sw_to_reg(float var){
+  asm volatile("addi t6, %0, 0": "=r"(var));
+}
+
+main()
+
+  /*****/
 
   /* main program, corresponds to procedures        */
   /* Main and Proc_0 in the Ada version             */
@@ -238,6 +243,12 @@ main ()
 #endif
 
   User_Time = End_Time - Begin_Time;
+
+  Microseconds = (float)User_Time * Mic_secs_Per_Second / ((float)CLOCKS_PER_SEC * ((float)Number_Of_Runs));
+  Dhrystones_Per_Second = ((float)CLOCKS_PER_SEC * Number_Of_Runs) / (float)User_Time;
+  Vax_Mips = Dhrystones_Per_Second / 1757.0;
+  // sw_to_reg(Vax_Mips / 50.0);
+  sw_to_reg(999);
 
 #if PRINT_MSG
   printf ("It tooks %8.2f seconds.\n", (float) User_Time/CLOCKS_PER_SEC);
