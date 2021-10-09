@@ -59,11 +59,11 @@ __stack_top  = 0x0000FFF0;
 
 MEMORY
 {
-    code_ram   (rx!rw) : ORIGIN = 0x00001000, LENGTH = 0x5000
-    data_ram   (rw!x)  : ORIGIN = 0x00006000, LENGTH = 0x4000
+    code_ram   (rx!rw) : ORIGIN = 0x00000000, LENGTH = 0x5000
+    data_ram   (rw!x)  : ORIGIN = 0x00005000, LENGTH = 0x4000
 }
 
-ENTRY(crt0)
+ENTRY(boot)
 
 SECTIONS
 {
