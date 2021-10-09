@@ -14,8 +14,17 @@
 #  You are free to use this script anyway you like it.
 #
 
+# find patterm start from $1 until find fist "."
+# e.q. ./create.sh bootrom.bin -> fname=bootrom
 fname="${1%.*}"
+
+# get file length (bytes)
+# stat: display file or file system status
+# %s: total size, in bytes
 fsize=`stat -c %s $fname.bin`
+
+# -e format_string: Specify a format string to be used for displaying data
+# -n Interpret only length bytes of input.
 hexdump -ve '1/4 "%08x\n"' -n $fsize $fname.bin > $fname.mem
 
 # uncomment the following lines if you want to zero-padding
