@@ -1,14 +1,18 @@
+/*
 // =============================================================================
-//  Program : boot.c
+//  Program : ultraboot.ld
 //  Author  : Chun-Jen Tsai
-//  Date    : Jan/14/2020
-// =============================================================================
-//  This is the entry point of the boot code. Must be located at the
-//  beginning of the text section in the linker script.
+//  Date    : Nov/04/2019
 // -----------------------------------------------------------------------------
 //  Revision information:
 //
 //  None.
+// -----------------------------------------------------------------------------
+//  Description:
+//  This is the boot code for Aquila SoC.  Upon reset, the boot code waiting
+//  for a program to be transferred from the UART port (using [File] -> [Send file]
+//  menu command of TeraTerm). Then the program will be loaded to 0x9000_0000,
+//  and executed. The processor will be halted when the execution is finished.
 // -----------------------------------------------------------------------------
 //  License information:
 //
@@ -51,24 +55,30 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 // =============================================================================
-#include "dhry.h"
+*/
 
-extern int main(void);
+__stack_top = 0x000000FF0;
 
-extern unsigned int __stack_top; /* declared in the linker script */
-unsigned int stack_top2 = (unsigned int) &__stack_top;
-
-void
-boot(void)
+MEMORY
 {
-    // Set the stack pointer. The application expects the top of stack
-    // to be located at __stack_top. We must physically assign
-    // __stack_top to sp before we run the boot loader.
-    asm volatile("lui t0, %hi(stack_top2)");
-    asm volatile("lw  sp, %lo(stack_top2)(t0)");
-    main();
-
-    // Halt the processor.
-    exit(0);
+    code_ram   (rx!rw) : ORIGIN = 0x00000000, LENGTH = 0x600
+    data_ram   (rw!x)  : ORIGIN = 0x00000600, LENGTH = 0x400
 }
 
+SECTIONS
+{
+    .text :
+    {
+        boot.o(.text)
+        *(.text)
+
+    } > code_ram
+
+    .data :
+    {
+        *(.data)
+        *(.bss)
+        *(.rodata*)
+
+    } > data_ram
+}

@@ -18,11 +18,13 @@
 # e.q. ./create.sh bootrom.bin -> fname=bootrom
 fname="${1%.*}"
 
+# get file length (bytes)
 # stat: display file or file system status
 # %s: total size, in bytes
 fsize=`stat -c %s $fname.bin`
 
-# TODO: still don't understand it
+# -e format_string: Specify a format string to be used for displaying data
+# -n Interpret only length bytes of input.
 hexdump -ve '1/4 "%08x\n"' -n $fsize $fname.bin > $fname.mem
 
 # uncomment the following lines if you want to zero-padding

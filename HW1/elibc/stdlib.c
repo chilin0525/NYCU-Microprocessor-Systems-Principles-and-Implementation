@@ -188,6 +188,13 @@ void exit(int status)
     printf("\n-----------------------------------------------------------");
     printf("------------\nAquila execution finished.\n");
     printf("Press <reset> on the FPGA board to reboot the cpu ...\n\n");
+
+    // If Aquila is running in waveform simulator, we can use putchar(03) to
+    // inform the simulator to end simulation if exit() has been called.
+    // However, you need a UART module that invokes $finish() when a 0x03 code
+    // has been sent to the UART device in simulation mode.
+    putchar(03);
+
     while (1);
 }
 #pragma GCC pop_options

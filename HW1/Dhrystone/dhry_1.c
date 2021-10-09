@@ -20,7 +20,7 @@
 #include <time.h>
 #include "dhry.h"
 
-#define PRINT_MSG 0
+#define PRINT_MSG 1
 
 /* Global Variables: */
 
@@ -57,14 +57,13 @@ float           Microseconds,
                 Vax_Mips;
 /* end of variables for time measurement */
 
-main()
-
-  /*****/
+main ()
+/*****/
 
   /* main program, corresponds to procedures        */
   /* Main and Proc_0 in the Ada version             */
 {
-  One_Fifty Int_1_Loc;
+        One_Fifty       Int_1_Loc;
   REG   One_Fifty       Int_2_Loc;
         One_Fifty       Int_3_Loc;
   REG   char            Ch_Index;
@@ -118,7 +117,7 @@ main()
   }
   printf ("\n");
 #else
-  Number_Of_Runs = 200;
+  Number_Of_Runs = 1000000;
 #endif
 
 #if PRINT_MSG
@@ -239,26 +238,6 @@ main()
 #endif
 
   User_Time = End_Time - Begin_Time;
-
-  int p;
-
-  volatile int check = 0x12345678;
-  check=check+1;
-  // asm volatile("addi t5, %0, 0": "=r"(check));
-  asm volatile("add t3, %1, zero": "=r"(p): "r"(check));
-
-  volatile int check2 = 12345678;
-  check2 = check2 + 1;
-  // asm volatile("addi t3, %0, 0": "=r"(check2));
-  asm volatile("add t5, %1, zero": "=r"(p): "r"(check2));
-
-  Microseconds = (float) User_Time * Mic_secs_Per_Second
-                        / ((float) CLOCKS_PER_SEC * ((float) Number_Of_Runs));
-  Dhrystones_Per_Second =
-                ((float) CLOCKS_PER_SEC * Number_Of_Runs) / (float) User_Time;
-  Vax_Mips = Dhrystones_Per_Second / 1757.0;
-  volatile int DMIPS = Vax_Mips*1000/50;
-  asm volatile("add t6, %1, zero": "=r"(p): "r"(DMIPS));
 
 #if PRINT_MSG
   printf ("It tooks %8.2f seconds.\n", (float) User_Time/CLOCKS_PER_SEC);

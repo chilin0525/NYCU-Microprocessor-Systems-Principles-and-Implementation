@@ -1,15 +1,16 @@
-/*
 // =============================================================================
-//  Program : dhry.ld
+//  Program : io_uart.h
 //  Author  : Chun-Jen Tsai
-//  Date    : Jan/14/2020
+//  Date    : Nov/04/2019
+// -----------------------------------------------------------------------------
+//  Description:
+//  This is the minimal I/O library for the boot code of aquila. It only
+//  contains the UART I/O and printf() function with '%d', '%x', and '%s'
+//  formating characters alone to keep the boot code as small as possible.
 // -----------------------------------------------------------------------------
 //  Revision information:
 //
 //  None.
-// -----------------------------------------------------------------------------
-//  Description:
-//  This is the linker script of a program compiled to run from DDRx memory.
 // -----------------------------------------------------------------------------
 //  License information:
 //
@@ -52,31 +53,14 @@
 //  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 //  POSSIBILITY OF SUCH DAMAGE.
 // =============================================================================
-*/
-__heap_start = 0x0000A000;
-__heap_size  = 0x00005000;
-__stack_top  = 0x0000FFF0;
 
-MEMORY
-{
-    code_ram   (rx!rw) : ORIGIN = 0x00001000, LENGTH = 0x5000
-    data_ram   (rw!x)  : ORIGIN = 0x00006000, LENGTH = 0x4000
-}
+unsigned char inbyte(void);
+void outbyte(unsigned char);
+int getchar(void);
+int putchar(int c);
+void putd(int);
+void putx(unsigned int, int);
+int puts(char *str);
+int printf(char *fmt, ...);
+void exit(int status);
 
-ENTRY(crt0)
-
-SECTIONS
-{
-    .text :
-    {
-        libelibc.a(.text)
-        *(.text)
-    } > code_ram
-
-    .data :
-    {
-        *(.data)
-        *(.bss)
-        *(.rodata*)
-    } > data_ram
-}
