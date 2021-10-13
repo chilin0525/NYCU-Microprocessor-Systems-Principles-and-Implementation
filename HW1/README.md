@@ -1,5 +1,13 @@
 # HW2
 
+- [HW2](#hw2)
+  * [init](#init)
+  * [optimize](#optimize)
+    + [freebsd c code](#freebsd-c-code)
+    + [change strcpy asm sequence](#change-strcpy-asm-sequence)
+    + [unroll strcpy](#unroll-strcpy)
+  * [summary](#summary)
+
 ## init
 
 * new lib code:
@@ -177,11 +185,8 @@
         DMIPS/Mhz:                                   0.72
         ```
 
-### observation from source code
 
-
-
-### opitimize c code
+### freebsd c code
 
 1. [Freebsd strcpy](https://github.com/freebsd/freebsd-src/blob/master/lib/libc/string/strcpy.c)
     * 單獨替換後 DMIPS 上升至 **0.74**
@@ -209,7 +214,7 @@
     ```
 2. [Freebsd strcmp](https://github.com/freebsd/freebsd-src/blob/master/lib/libc/string/strcmp.c):
     * 單獨替換後 DMIPS 上升至 **0.74**
-    ```
+    ```c
     while (*s1 == *s2++)
 		if (*s1++ == '\0')
 			return (0);
@@ -273,7 +278,7 @@ char *strcpy(char *dst, char *src)
     1ec8:	00008067          	ret
 ```
 
-在單單這樣調換指令順序的方式上, DMIPS 上升到 ```0.77```, 現在到 waveform 查看變動, 我們預期在改掉 load-used instruction 後應該不會存在 data hazard, 因此預期在 memory stage 執行: ```1ea0```(只會一次), ```1eac```, ```1eb4``` , ```1ec0```(只會一次) 這幾條指令時才會出現 stall, 其他指令不應該出現 stall, 推算總共應該花費的 cycle 數: 
+在單單這樣調換指令順序的方式上, DMIPS 上升到 ```0.74```, 現在到 waveform 查看變動, 我們預期在改掉 load-used instruction 後應該不會存在 data hazard, 因此預期在 memory stage 執行: ```1ea0```(只會一次), ```1eac```, ```1eb4``` , ```1ec0```(只會一次) 這幾條指令時才會出現 stall, 其他指令不應該出現 stall, 推算總共應該花費的 cycle 數: 
 1. init: 4=2+1+1 (branch predict 猜對, 不會有 penalty)
 
     <img src="img/strcpy_00.png" width=900px>
