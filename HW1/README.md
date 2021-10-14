@@ -35,7 +35,9 @@
 
     <img src="img/init_dmips.png" width=500px>
 
-## optimize
+## analyze
+
+### c/asm code after init
 
 * 這次作業允許我們對 ```elibc/strcmp()``` 與 ```elibc/strcpy()``` 做優化, 下面附上 init 做完後原始的狀態
     * ```elibc/strcpy()```
@@ -185,6 +187,11 @@
         DMIPS/Mhz:                                   0.72
         ```
 
+### analyzing
+
+
+
+## optimize
 
 ### freebsd c code
 
@@ -302,6 +309,22 @@ char *strcpy(char *dst, char *src)
     <img src="img/strcpy_06.png" width=900px>
 
 ### unroll strcpy
+
+short version, middle part*29:
+
+```anm
+asm volatile("lbu	a5,0(a1)");
+asm volatile("mv	a4,a0");
+asm volatile("sb	a5,0(a4)");
+
+asm volatile("addi	a1,a1,1");
+asm volatile("lbu	a5,0(a1)");
+asm volatile("addi	a4,a4,1");
+asm volatile("sb	a5,0(a4)");
+
+asm volatile("sb	zero,1(a4)");
+asm volatile("ret");
+```
 
 ```c
 char *strcpy(char *dst, char *src)
@@ -435,7 +458,11 @@ char *strcpy(char *dst, char *src)
 
 <img src="img/unroll_02.png" witdh=900px>
 
-### 調換 strcmp asm code
+### change strcmp asm code sequence
+
+<img src="img/strcmp_algorithm.png" width=500px>
+
+追根究底與 ```strcpy``` 的原因相同, 都是因為 load-used instruction 造成, 我們只要想辦法在 compare 之前就 load 出來, 再變動 pointer 即可:
 
 
 
@@ -449,4 +476,5 @@ char *strcpy(char *dst, char *src)
 |FreeBSD strcpy+strcmp|0.77|
 |調換 strcpy asm code|0.75|
 |unroll strcpy|0.78|
-|調換 strcmp asm code||
+|調換 strcmp asm code|0.74|
+|strcpy unroll+調換 strcmp asm code|0.81|
