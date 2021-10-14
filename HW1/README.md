@@ -261,7 +261,7 @@ char *strcpy(char *dst, char *src)
     asm volatile("addi	a4,a4,1");
     asm volatile("bnez	a5,copy");
     asm volatile("copy_end:");
-    asm volatile("sb	zero,1(a4)");
+    asm volatile("sb	zero,0(a4)");
     asm volatile("ret");
 }
 ```
@@ -280,9 +280,8 @@ char *strcpy(char *dst, char *src)
     1ebc:	fe0798e3          	bnez	a5,1eac <copy>
 
 00001ec0 <copy_end>:
-    1ec0:	000700a3          	sb	zero,1(a4)
+    1ec0:	00070023          	sb	zero,0(a4)
     1ec4:	00008067          	ret
-    1ec8:	00008067          	ret
 ```
 
 在單單這樣調換指令順序的方式上, DMIPS 上升到 ```0.74```, 現在到 waveform 查看變動, 我們預期在改掉 load-used instruction 後應該不會存在 data hazard, 因此預期在 memory stage 執行: ```1ea0```(只會一次), ```1eac```, ```1eb4``` , ```1ec0```(只會一次) 這幾條指令時才會出現 stall, 其他指令不應該出現 stall, 推算總共應該花費的 cycle 數: 
