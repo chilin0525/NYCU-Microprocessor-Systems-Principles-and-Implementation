@@ -99,11 +99,27 @@ long strlen(char *s)
 
 char *strcpy(char *dst, char *src)
 {
-    char *tmp = dst;
+    // char *tmp = dst;
 
-    while (*src) *(tmp++) = *(src++);
-    *tmp = 0;
-    return dst;
+    // while (*src) *(tmp++) = *(src++);
+    // *tmp = 0;
+    // return dst;
+
+    asm volatile("lbu	a5,0(a1)");
+    asm volatile("mv	a4,a0");
+    asm volatile("beqz	a5,copy_end");
+    asm volatile("copy:");
+    asm volatile("sb	a5,0(a4)");
+    asm volatile("addi	a1,a1,1");
+    asm volatile("lbu	a5,0(a1)");
+    asm volatile("addi	a4,a4,1");
+    asm volatile("bnez	a5,copy");
+    asm volatile("copy_end:");
+    asm volatile("sb	zero,0(a4)");
+
+    // char *save = dst;
+    // for (; (*dst = *src); ++src, ++dst);
+    // return(save);
 }
 
 char *strncpy(char *dst, char *src, size_t n)
@@ -137,28 +153,57 @@ char *strncat(char *dst, char *src, size_t n)
 
 int  strcmp(char *s1, char *s2)
 {
-    int value;
+    // while (*s1 == *s2++)
+	// 	if (*s1++ == '\0')
+	// 		return (0);
+	// return (*(const unsigned char *)s1 - *(const unsigned char *)(s2 - 1));
+    
+    asm volatile("j compare");
+
+    asm volatile("str_end:");
+    asm volatile("beqz a5,ret_z");
+
+    asm volatile("compare:");
+    asm volatile("lbu	a5,0(a0)");
+    asm volatile("lbu	a4,0(a1)");
+    asm volatile("addi	a0,a0,1");
+    asm volatile("addi	a1,a1,1");
+    asm volatile("beq	a5,a4,str_end");
+    asm volatile("li a0,-1");
+    // a0=a5, a1=a4
+    // a4<=a5
+    asm volatile("bleu	a4,a5,ret_o");
+    asm volatile("ret");
+
+    asm volatile("ret_o:");
+    asm volatile("li a0,1");
+    asm volatile("ret");
+
+    asm volatile("ret_z:");
+    asm volatile("li a0,0");
+    
+    // int value;
  
-    s1--, s2--;
-    do
-    {
-        s1++, s2++;
-        if (*s1 == *s2)
-        {
-            value = 0;
-        }
-        else if (*s1 < *s2)
-        {
-            value = -1;
-            break;
-        }
-        else
-        {
-            value = 1;
-            break;
-        }
-    } while (*s1 != 0 && *s2 != 0);
-    return value;
+    // s1--, s2--;
+    // do
+    // {
+    //     s1++, s2++;
+    //     if (*s1 == *s2)
+    //     {
+    //         value = 0;
+    //     }
+    //     else if (*s1 < *s2)
+    //     {
+    //         value = -1;
+    //         break;
+    //     }
+    //     else
+    //     {
+    //         value = 1;
+    //         break;
+    //     }
+    // } while (*s1 != 0 && *s2 != 0);
+    // return value;
 }
 
 int  strncmp(char *s1, char *s2, size_t n)
