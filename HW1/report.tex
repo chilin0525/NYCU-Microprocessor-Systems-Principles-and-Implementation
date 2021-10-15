@@ -25,7 +25,7 @@
 \end{center}
 
 \begin{flushleft}
-    此次作業在原始\ Dhrystone 不做任何修改下所得到的\ DMIPS 為\ 0.72, \
+    \ \ \ \ \ \ 此次作業在原始\ Dhrystone 不做任何修改下所得到的\ DMIPS 為\ 0.72, \
     此篇\ report 中將會先透過反組譯所得到的組合語言、Aquila 架構 與\ Vivado waveform 進行分析, \ 
     找出當前的缺點後, 以組合語言嵌入\ Dhrystone 原始碼中實現優化的方法。 
 \end{flushleft}
@@ -34,7 +34,7 @@
     \section*{ANALYZE}
 \end{center}
 \begin{flushleft}
-反組譯後可以獲得\ CODE. 1. 組合語言內容,搭配\ waveform 可以清楚且快速的知道哪些時候發生\ stall,\
+    \ \ \ \ \ \ 反組譯後可以獲得\ CODE. 1. 組合語言內容,搭配\ waveform 可以清楚且快速的知道哪些時候發生\ stall,\
 觀察整個\ \textit{strcpy function} 後,\
 可以知道主要發生\ stall 的指令為\ Fig. 1. 用紅線框選出來的兩個區塊。\newline
 \end{flushleft}
@@ -44,7 +44,7 @@
     \subsection*{stall data fetch}
 \end{center}
 \begin{flushleft}
-Fig. 1. 中第一個\ stall 區塊發生\ \textit{stall\_data\_fetch},\ 
+    \ \ \ \ \ \ Fig. 1. 中第一個\ stall 區塊發生\ \textit{stall\_data\_fetch},\ 
 而發生主要原因為\ \textit{core\_top.v} 中的\ finite state machine 中的
 \end{flushleft}
 
@@ -81,7 +81,7 @@ Fig. 1. 中第一個\ stall 區塊發生\ \textit{stall\_data\_fetch},\
 \end{center}
 
 \begin{flushleft}
-    第二個\ stall 區塊除了發生上述的\ \textit{stall\_data\_fetch},
+    \ \ \ \ \ \ 第二個\ stall 區塊除了發生上述的\ \textit{stall\_data\_fetch},
     還發生\ \textit{stall\_data\_hazard},\ data hazard 的產生源自\ pipeline 中某一指令使用到之前階段指令尚未產生的結果,\
     解決方法可以分為軟體方法與硬體方法。\\
     軟體方法分為:\
@@ -93,7 +93,7 @@ Fig. 1. 中第一個\ stall 區塊發生\ \textit{stall\_data\_fetch},\
     \begin{enumerate}
         \item forwarding: 通過拉線的硬體方式,將需要的資料提早送到前面的 pipeline stage
     \end{enumerate}
-    需要特別注意的是使用\ forwarding 的方式如果遇到\ load-use instruction, 必須要\ stall 1 cycle,\
+    \ \ \ \ \ \ 需要特別注意的是使用\ forwarding 的方式如果遇到\ load-use instruction, 必須要\ stall 1 cycle,\
     如\ Fig. 2. 當要 load 資料時最少要等到\ memory stage 。\
     根據\ Aquila 原始碼中可以找到 \ \textit{stall\_data\_hazard} 發生的源頭為\
     \textit{decode.v}\, 為\ CODE. 2. 中的內容, \ \textit{re\_o} 表示上一筆指令是否為 load 指令,\
@@ -127,21 +127,21 @@ Fig. 1. 中第一個\ stall 區塊發生\ \textit{stall\_data\_fetch},\
         \small CODE. 1. strcpy assembly code
     \end{center}
 
-    當上一筆指令為 load 指令且當前指令的來源暫存器與上一筆指令的目的暫存器相同時,\
+    \ \ \ \ \ \ 當上一筆指令為 load 指令且當前指令的來源暫存器與上一筆指令的目的暫存器相同時,\
     即為\ load-use instruction, 因此需要\ stall 1 cycle。\ 
     此處僅\ stall program counter 與\ fetch stage,\
     其他\ pipeline stage 仍要繼續執行。\
     根據\ FIG. 1.\
     我們可以驗證\ CODE. 1. 中的\ 1ebc 這條指令在 decode stage 時的確顯示\ data hazard\newline
 
-    根據\ strcmp 的\ waveform Fig. 2. 後可以發現其缺點與\ strcpy 近乎相同,\
+    \ \ \ \ \ \ 根據\ strcmp 的\ waveform Fig. 2. 後可以發現其缺點與\ strcpy 近乎相同,\
     都是含有 \ \textit{stall\_data\_fetch} 與 \ \textit{stall\_data\_hazard},\
     因此我的想法是將優化的方法同時套用到這兩個\ function 上理論上就可以比原始碼獲得更高的 DMIPS.\newline
 
-    根據上面的分析, 可以知道\ load-use instruction 會導致額外\ stall 1 cycle,\
+    \ \ \ \ \ \ 根據上面的分析, 可以知道\ load-use instruction 會導致額外\ stall 1 cycle,\
     然而不如 \ \textit{stall\_data\_fetch} 無法避免,\
     透過重新排列指令的方法可以將原本含有\ load-use instruction 給消除,\
-    因此重新排列指令將會是本次實現優化的目標。
+    因此重新排列指令將會是本次實現優化的目標。\newline
 
 \end{flushleft}
 
@@ -175,7 +175,7 @@ assign is_load_hazard_o =
     \subsection*{rescheduling}
 \end{center}
 \begin{flushleft}
-    根據\ CODE. 1. 可以先觀察是否可以實現指令重排。\
+    \ \ \ \ \ \ 根據\ CODE. 1. 可以先觀察是否可以實現指令重排。\
     初始化會先將要複製的字元\ load 到暫存器\ \textit{a5},\
     判斷是否為空字串, 是的話\ branch 到\ 1ec0 處。\newline
     否的話執行下面直到字串完全複製結束:\newline
@@ -187,7 +187,7 @@ assign is_load_hazard_o =
         \item 利用\ \textit{a5} 內容判斷字串是否到尾端, 否的話繼續執行此迴圈\newline
     \end{enumerate}
     
-    透過上面我們可以知道會發生\ load-use instruction 是因為第五步驟每次在判斷字串是否複製結束前,\
+    \ \ \ \ \ \ 透過上面我們可以知道會發生\ load-use instruction 是因為第五步驟每次在判斷字串是否複製結束前,\
     必須先將下一個要複製的字元給\ load 出來, 因此不要讓\ load-use instruction 出現的方法就是\
     每次先做複製後在更新兩個字串的指標, CODE. 3. 為改動後的組合語言\newline
 
@@ -198,13 +198,13 @@ assign is_load_hazard_o =
         \item 比對過程: 將兩個指標往後移動一個位置, 並分別\ load 到暫存器, 進行比對
         \item 若非相同,\ return 相對應的數值;否則繼續第二步驟進行比對\newline
     \end{enumerate}
-    原始碼中產生\ load-use instruction 的原因出現在\ 
+    \ \ \ \ \ \ 原始碼中產生\ load-use instruction 的原因出現在\ 
     比對過程中將字元\ load 到暫存器後馬上接著比對,\
     因此優化方式為先指標指向的字元\ load 到暫存器中,\ 
     更新指標使兩個指標分別指向字串下一個位置,\
     再將\ load 到暫存器的字元比對後,\
     即可避免\ load-use instruction 的產生。\
-    優化過後的內容如 CODE. 4. 所顯示,\
+    優化過後的內容如\ CODE. 4. 所顯示,\
     也避免\ load-use instruction 的產生。
     
     \begin{center}
@@ -265,24 +265,51 @@ assign is_load_hazard_o =
 \end{flushleft}
 
 \begin{center}
-    \subsection*{unroll}    
-    根據觀察,\ Dhrystone 中\ string copy 每次都是\ copy 長度為 30 的字串,\
+    \subsection*{unroll}            
+\end{center}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 根據觀察,\ Dhrystone 中\ string copy 每次都是\ copy 長度為 30 的字串,\
     因此可以利用將\ loop 展開的方式以增高效能, 避免了判斷是否字串已經複製完、\ branch 等指令,\
     當然在這裡寫死複製長度後\ string copy 在其他非字串長度為\ 30 的地方將會出現錯誤,\
-    因此僅僅適用於此處。將\ string copy unroll 的過程如下:
+    也不符合作業要求但是因為\ DMIPS 有較為提昇因此在此提及。\
+    將\ string copy unroll 的過程如下:
+
     \begin{enumerate}
-        \item 初始化, 包含使用另外一個指針進行複製的動作與第一次複製
+        \item 初始化, 包含使用另外一個指針進行複製的動作與第\ 1 次複製
         \item 重複\ 29 次複製
         \item 補\ 0 與\ return
     \end{enumerate}
-\end{center}
+\end{flushleft}
 
 \begin{center}
     \section*{SUMMARY}
-    dsf
 \end{center}
 
-\section*{}
+\begin{flushleft}
+    \ \ \ \ \ \ 根據我們的分析,\ load-use instruction 為此次可以優化的大方向,\
+    我們實現重新排成指令的優化想法後將\ DMIPS 從\ 0.72 上升到\ 0.77,\
+    驗證了我們優化的方向與結果正確。\
+    再多考慮\ unroll 的情況下,\
+    可以減省\ branch prediction 錯誤的情況與\ branch 的發生,\ 
+    儘管不符合作業要求,\
+    \ DMIPS 最多可以上升至\ 0.81,\ 
+    在\ trace Aquila 的原始碼過程中, \
+    除了\ report 中提及的\ forwarding, \ stall  型態與判斷外,\
+    還有發現\ Aquila 還有實做\ branch prediction 的部份,\
+    在以往計算機組織時\ branch prediction 往往為理論上的知識,\
+    甚至有些教授的作業內容也不包含\ pipeline 的實做,\
+    因此透過作業一也算是複習了計算機組織的內容,\newline
+    最後較為奇怪的發現是加上\newline
+    \begin{center}
+        \textit{(* mark\_debug = “true” *) wire signal}\newline    
+    \end{center}
+    仍然有些\ port 無法被顯示出來,\
+    為此次作業中發現較為怪異的點。
+    
+\end{flushleft}
+
+
 
 \end{multicols}
 
