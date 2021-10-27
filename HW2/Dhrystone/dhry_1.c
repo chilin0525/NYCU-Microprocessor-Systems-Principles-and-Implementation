@@ -263,7 +263,7 @@ main ()
     printf ("VAX MIPS:                                   ");
     printf ("%6.1f \n", Vax_Mips);
     printf("DMIPS/Mhz:                                   ");
-    printf("%6.2f\n", Vax_Mips/CPU_FREQ_MHZ);
+    printf("%6.5f\n", Vax_Mips/CPU_FREQ_MHZ);
     printf ("\n");
   }
 #endif
