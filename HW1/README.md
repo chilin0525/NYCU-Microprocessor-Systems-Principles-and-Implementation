@@ -2,11 +2,34 @@
 
 - [HW2](#hw2)
   * [init](#init)
+  * [analyze](#analyze)
+    + [c/asm code after init](#c-asm-code-after-init)
+    + [analyzing](#analyzing)
   * [optimize](#optimize)
     + [freebsd c code](#freebsd-c-code)
     + [change strcpy asm sequence](#change-strcpy-asm-sequence)
     + [unroll strcpy](#unroll-strcpy)
+    + [change strcmp asm code sequence](#change-strcmp-asm-code-sequence)
+  * [answer](#answer)
   * [summary](#summary)
+
+```
+.
+├── README.md
+├── report.pdf  <==== HW1 的 report
+├── report.tex  <==== HW1 的 tex
+├── Makefile    <==== for Latex
+├── string.c    <==== HW1 ans (annouced in HW2) 
+├── Dhrystone
+├── elibc
+├── img
+├── uartboot    
+└── verilog      <== Backup
+    ├── core_rtl <=== Baquila_mpd_build/src/ HW1 結束時的 workspace
+    ├── mem
+    ├── sim
+    └── xdc
+```
 
 ## init
 
@@ -463,6 +486,9 @@ char *strcpy(char *dst, char *src)
 
 追根究底與 ```strcpy``` 的原因相同, 都是因為 load-used instruction 造成, 我們只要想辦法在 compare 之前就 load 出來, 再變動 pointer 即可:
 
+## answer
+
+在 HW2 老師有釋出可以改到 0.9 的 c code, 概念是一次 load word 減少 load 次數, 哭 = =
 
 
 ## summary
