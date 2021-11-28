@@ -1,0 +1,320 @@
+\documentclass{article}
+
+\usepackage{CJKutf8}
+\usepackage{multicol}
+\usepackage[margin=0.5cm]{geometry}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+
+\title{\textbf{\LARGE {HW3 Cache Optimization}}}
+\author{學號:0711282 邱頎霖}
+\date{}
+
+\begin{document}
+\begin{CJK*}{UTF8}{bsmi}
+\setlength{\columnsep}{1cm}
+
+\vspace*{-50pt}
+    {\let\newpage\relax\maketitle}
+
+\begin{multicols}{2}
+
+\begin{center}
+    \section*{INTRODUCTION}
+\end{center}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 在使用老師所提供的 \ string.c 所得到的\ DMIPS 為\ 0.90342 以此作為初始基準值, \
+    此篇報告首先討論分支預測的必要性, 透過將分支預測給關閉可以發現\ DMIPS 下降到\ 0.87832。\
+    接著討論\ BHT table entry size 對 \ DMIPS 的影響,\
+    並實際將\ BHT entry 從\ 32 改到\ 64 可以獲得 DMIPS 0.97457, \
+    將\ size 縮小時可以發現對 \ DMIPS 不影響仍為\ 0.90342,\
+    透過\ ILA 可以發現原因是\ Dhrystone 內的迴圈總共含有\ 36 條\ branch instruction。\
+    接著討論當前 Aquila 實現分支預測的方式與其缺點與分支預測的必要性,\
+    並說明\ Two-level Branch Predictor 可以解決當前缺點的原因,\
+    並透過以組合語言改寫得到新的\ benchmark,\
+    再將當前\ Aquila 的分支預測器與\ Two-level Branch Predictor 分別都執行新的\ benchmark,\
+    得到\ Two-level Branch Predictor 所花費時間少於當前\ Aquila 的結果,\
+    最後以\ Dhrystone 對改寫的\ Two-level Branch Predictor 測試獲得的\ DMIPS 為\ 0.94859。
+\end{flushleft}
+
+\begin{center}
+    \section*{ANALYZE}
+\end{center}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 先使用老師提供的原始碼先進行\ TCM 與\ DRAM 的速度測試，\
+    一開始就遇到速度與講義上有差異的情況，大概差了\ 10 msec，\
+    例如\ TCM 跑出來是\ 814 msec,\
+    後來因為發生一些問題導致需要將工作區重新設定後再跑一次後速度就與講義上一致了,\
+    而起始速度大致如\ TABLE. 1. 所示，\
+    \ TCM 如預期的跑得最快, 可以作為此次作業\ upper bound 。\
+\end{flushleft}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 接著根據作業要求將\ cache size 固定為\ 2KB,\
+    我們可以調整的部份大概為 \ cache set 內\ block(line) 數量與\ block size(line size),\
+    同時因為 cache size 固定,\
+    因此一旦變動\ set 內\ block 數量也會相對應影響\ set 數量,\
+    如果對\ set 內\ block 數量進行改變測試,\
+    結果如\ TABLE. 1. 中所示,\
+    可以發現\ 2-way 相比之下似乎速度快了一點,\
+    而\ 4-way 與\ 8-way 在\ PI 程式計算\ 1000 位數下速度近乎相同。\
+\end{flushleft}
+
+\begin{center}
+    \begin{tabular}{||c c c c c ||} 
+     \hline
+     Type & TCM & 2-way & 4-way & 8-way \\ [2ex] 
+     \hline\hline
+     time(msec) & 804 & 1076  & 1082 & 1082 \\ 
+     \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \small{TABLE 1. execution time of PI program}\\
+\end{center}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 在\ cache 中較重要的議題是\ hit 與\ miss,\
+    如果今天\ cache 中\ hit 次數越多, 我們可以減少需要到\ memory 讀寫 data 等動作,\
+    一旦越往底層的儲存裝置, 如 \ memory, disk 等等做讀寫的動作都是耗費相當大的時間代價的。\
+    因此我對\ hit, miss 做紀錄, 結果如\ TABLE. 2. 所示\
+    因為如果我們單純以\ hit rate 下去排列,\
+    計算出來的結果\ 2-way 會高於\ 4-way 與\ 8-way,\
+    根據\ TABLE. 1. 中的結果\ 2-way 的確在校能上優於\ 4-way 與 \ 8-way 。\
+    而\ 4-way 與\ 8-way 大致上速度差不多,後續會再討論兩者之間是否有差異性。
+\end{flushleft}
+
+\begin{center}
+    \begin{tabular}{||c c c c c ||} 
+     \hline
+     Type & write hit & write miss & read hit & read miss \\ [2ex] 
+     \hline\hline
+     2-way & 0x1064da & 0x1837 & 0x13a9e7 & 0x29090  \\ 
+     \hline
+     4-way & 0x0fccdb & 0xb366 & 0x142f97 & 0x20ae0  \\ 
+     \hline
+     8-way & 0x0f8f73 & 0xf0ce & 0x146d1b & 0x1cd5c  \\ 
+     \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \small{TABLE 2. number of hit/miss in N-way Set Associative Cache}\\
+\end{center}
+
+\columnbreak
+% PAGE 1 right side
+
+\begin{flushleft}
+    \ \ \ \ \ \ 而為何\ Hit 與\ Miss 會是直接影響\ cache 效能的直接因素,\
+    可以從觀察\ Aquila 內\ D-cache controller 的\ FSM 下手,\
+    我們可以知道當最好的情況就是\ IDLE 變化到\ Analyze 時發生\ hit,\
+    而一旦發生\ Miss 的情況,\
+    我們還得考慮分別為當前為\ dirty 與非\ dirty 的兩個情況,\
+    如果為\ dirty 我們勢必還得花上時間將資料寫回\ memory,\
+    而且因為要對\ memory 進行操作, 時間上的開銷一定不小,\
+    根據使用\ ILA 所觀察的結果,\
+    如果要將內容寫回\ memory(\ FSM 內須經過\ Wb\_to\_mem 者), \emph{p\_strobe\_i} 與 \emph{p\_ready\_o} 之間的\ latency 數多達約\ 51 cycle;\
+    如果不需要將\ data 寫回\ memory(\ FSM 只須經過\ Rb\_from\_mem 者) 只需要從\ memory 讀取到\ cache 的話,\
+    latency 數約為\ 31 cycle。對此我分別紀錄單獨經過 \ Wb\_to\_mem 與 \ Rb\_from\_mem 的數據,\
+    數據如\ TABLE. 3. 表示, 這邊表格內數字為十進位制表示。\
+    可以發現單獨經過\ Rb\_from\_mem 的次數僅為\ 128 次,\
+    而因為\ dirty bit 導致須花較多時間的寫回記憶體的\ miss 次數為\ 4-way 最多, \ 8-way 次多,\
+    \ 2-way 的次數相比上述兩者有著顯著的減少，也因此在效能上也有顯著的不同。\
+    我們可以總結在執行時間上,\ 影響最大者為含有\ dirty bit 的 \ Miss, 其次為不含有\ dirty bit 的 \ Miss,
+    但是因為後者與前者相比少上許多,\
+    因此在後續討論時我們大可以先大致以不含有 \ dirty bit 的 \ Miss 作為基準,\
+    如果此項數據較大我們基本上可以推論說他需要較多的執行時間。
+\end{flushleft}
+
+\begin{center}
+    \begin{tabular}{||c c c ||} 
+     \hline
+      & \ Miss\_With\_dirty & \ Miss\_Without\_dirty \\ [2ex] 
+     \hline\hline
+     2-way & 174327 & 128 \\ 
+     \hline
+     4-way & 179782 & 128 \\ 
+     \hline
+     8-way & 179754 & 128 \\ 
+     \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \small{TABLE 3. number of miss with dirty bit/ without dirty bit}\\
+\end{center}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 從\ TABLE. 3. 還可以觀察到一件事情為\ 8-way 似乎有一定的潛力可以比\ 4-way 有更好的效能,\
+    儘管在\ PI 程式計算小數點後\ 1000 位的情況下兩者執行時間大致相同,\
+    但是如果要探討更多位數的話也許有不一樣的效果,\
+    因此我多測試了執行\ 5000 次的情況,\
+    結果如\ TABLE. 4. 顯示,\
+    在計算小數點後\ 5000 位數的情況下\ 8-way 較 \ 4-way 還快了一點點,\
+    另外\ 2-way 在計算\ 5000 位的情況下明顯變慢了,\
+    有趣的是當我去紀錄三者分別含有\ dirty bit 的\ miss 與不含\ dirty bit 的\ miss 次數時,\
+    三者結果跑出一模一樣的數據。
+\end{flushleft}
+
+\begin{center}
+    \begin{tabular}{|| c c c c ||} 
+     \hline
+      & time(msec) & \ Miss\_With\_dirty & \ Miss\_Without\_dirty \\ [2ex] 
+     \hline\hline
+     2-way & 37367 & 9858214 & 128 \\ 
+     \hline
+     4-way & 37367 & 9858214 & 128 \\ 
+     \hline
+     8-way & 37366 & 9858214 & 128 \\ 
+     \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \small{TABLE 4.}\\
+\end{center}
+
+\newpage
+
+\begin{center}
+    \section*{LRU IMPLEMENTATION}
+\end{center}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 除了\ block(line) size, cache 內\ block 數量可以做調整,\
+    還可以做調整的為\ cache 替換的演算法,\
+    原始程式碼中使用\ FIFO,\
+    FIFO 簡單易實做,\
+    但效果如何要視當下\ cache 內的\ pattern 後才知道。\
+    因此這邊我實做\ LRU 測試是否可以在替換時獲得更好的結果。
+\end{flushleft}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 在使用\ LRU 後\ PI 程式計算小數點後\ 1000 位數結果如\ TABLE. 5. 所示,\
+    可以看到使用\ LRU 後\ 2-way 仍然是跑最快者,\
+    速度與\ FIFO 相比又再慢了一點。\
+    但是如果以\ PI 程式計算小數點後\ 5000 位數的話結果將會改變,\
+    結果如 \ TABLE. 6. 所示,\
+    可以看到如果要計算小數點後\ 5000 位數的話又會變成\ 4-way 變成三者之中最快的,\
+    且使用\ LRU 的\ 2-way 與 \ 4-way 都比使用\ FIFO 時還快了。
+\end{flushleft}
+    
+\begin{center}
+    \begin{tabular}{||c c c c c c ||} 
+        \hline
+        n-way & time & wHit & wMiss & rHit & rMiss \\ [1.0ex] 
+        \hline\hline
+        2-way & 1114 & 0xfae1a & 0xd227 & 0x13e9ee & 0x25089  \\ 
+        \hline
+        4-way & 1150 & 0xf5be2 & 0x1245f & 0x13c8ac & 0x271cb  \\ 
+        \hline
+        8-way & 1142 & 0xf7de3 & 0x1025e & 0x13c146 & 0x27931 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \footnotesize TABLE. 5. Execution time of LRU (NDIGITS=1000)
+\end{center}
+
+\begin{center}
+    \begin{tabular}{||c c c c c c ||} 
+        \hline
+        n-way & time & wHit & wMiss & rHit & rMiss \\ [1.0ex] 
+        \hline\hline
+        2-way & 37033 & 0x10065f9 & 0x32f9f7 & 0x14aa456 & 0x92f2e6  \\ 
+        \hline
+        4-way & 36739 & 0x100f4f5 & 0x326afb & 0x14ce5c8 & 0x9022f8  \\ 
+        \hline
+        8-way & 37451 & 0x1001ccd & 0x334323 & 0x146c83a & 0x9718ae \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \footnotesize TABLE. 6. Execution time of LRU (NDIGITS=5000)
+\end{center}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 根據前面所敘述, 在\ cache 中的快慢應該要與有\ dirty bit 的\ miss 數量呈現正向關係,\
+    因此我們可以在換成使用\ LRU 後驗證此項推論是否依然正確,\
+    首先前面有講到不含\ dirty bit 的數量應該會比含有\ dirty bit 的\ Miss 數量少上許多,\
+    這點到了\ LRU 依然保有一樣性質。\
+    在\ LRU 中含有\ dirty bit 的\ Miss 一旦發生所產生的\ latency 與使用\ FIFO 時大致上相同約為\ 50 clock cycle,\
+    而含有\ dirty bit 的\ Miss 發生的話產生的\ latency 大致為\ 30 cycle,\
+    到此基本上與\ FIFO 大致上相同,\
+    原因與\ Aquila 內實現\ Dcache 的架構有關,\
+    在改寫成使用\ LRU 時基本上相比\ FIFO 我沒有花上額外許多的時間找出\ Victim,\
+    基本上就是維護一個\ List 並且每次將最前頭的作為\ victim,\
+    一旦讀過或是寫過後就放到最後。\
+    因此在時間複雜度上基本上與\ FIFO 不會差上太多,\
+    但是如果改使用\ LFU 或是其他演算法的話可能都需要再額外上時間去找出\ Victim,\
+    也許他們可以降低\ Miss 次數但就是得付出相對應的時間上的代價。\
+    \ TABLE. 7. 為計算小數點後\ 1000 位數的結果,\
+    可以看到相比與\ TABLE 3. 使用\ FIFO 時\ LRU 有更多有\ dirty bit 的\ miss 數量,\
+    也因此在執行時間上\ FIFO 有更少的計算時間。\
+    \ TABLE. 8. 為計算小數點後\ 5000 位數的結果,\
+    可以看到相比與\ TABLE 4. 使用 FIFO 時\,
+    \ 2-way 與 \ 4-way 的 \ LRU 有更少有\ dirty bit 的\ miss 數量,\
+    也因此在計算時間上他們有相比\ FIFO 有更少的執行時間。\
+\end{flushleft}
+
+
+\begin{center}
+    \begin{tabular}{|| c c c ||} 
+     \hline
+     n-way &  \ Miss\_With\_dirty & \ Miss\_Without\_dirty \\ [2ex] 
+     \hline\hline
+     2-way & 205358 & 130 \\ 
+     \hline
+     4-way & 234917 & 133 \\ 
+     \hline
+     8-way & 228097 & 142 \\ 
+     \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \footnotesize TABLE. 7. Number of miss with/without dirty bit  (NDIGITS=1000)
+\end{center}
+
+
+\begin{center}
+    \begin{tabular}{|| c c c ||} 
+     \hline
+     n-way &  \ Miss\_With\_dirty & \ Miss\_Without\_dirty \\ [2ex] 
+     \hline\hline
+     2-way & 9630438 & 128 \\ 
+     \hline
+     4-way & 9446006 & 130  \\ 
+     \hline
+     8-way & 9902122 & 132 \\ 
+     \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \footnotesize TABLE. 8. Number of miss with/without dirty bit  (NDIGITS=5000)
+\end{center}
+
+\columnbreak
+
+\begin{center}
+    \section*{SUMMARY}
+\end{center}
+
+\begin{flushleft}
+    \ \ \ \ \ \ 從一開始拿到為\ FIFO, 4-way 的\ cache 架構, 在計算小數點後\ 1000 為
+\end{flushleft}
+
+
+\end{multicols}
+
+
+\end{CJK*}
+\end{document}
