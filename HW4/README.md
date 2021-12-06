@@ -120,5 +120,10 @@ end
 
 ## ref
 
+* [Introduction to AXI4-Lite (Advanced Extensible Interface)](https://www.realdigital.org/doc/a9fee931f7a172423e1ba73f66ca4081)
 * [AXI4-Lite Interface](https://www.realdigital.org/doc/a9fee931f7a172423e1ba73f66ca4081)
 * [深入 AXI4 总线（一）握手机制](https://zhuanlan.zhihu.com/p/44766356)
+* [深入 AXI4 总线（二）架构](https://zhuanlan.zhihu.com/p/45122977)
+* [深入 AXI4 总线（三）传输事务结构](https://zhuanlan.zhihu.com/p/46538028)
+* [AXI4協議學習（一）：VALID和READY握手信號](https://www.twblogs.net/a/5b8c40682b71771883319f03)
+* [AXI4協議學習（三） Transaction屬性（ARCACHE和AWCACHE信號）](https://www.twblogs.net/a/5b8c40682b71771883319f01)
