@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sun Dec  5 14:39:49 2021
+# Process ID: 76643
+# Current directory: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1
+# Command line: vivado -log soc_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_top.tcl
+# Log file: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/soc_top.vds
+# Journal file: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source soc_top.tcl -notrace

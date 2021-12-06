@@ -1,0 +1,1021 @@
+
+*** Running vivado
+    with args -log mig_7series_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mig_7series_0.tcl
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source mig_7series_0.tcl -notrace
+Command: synth_design -top mig_7series_0 -part xc7a35ticsg324-1L -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 96880
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2438.695 ; gain = 0.000 ; free physical = 135 ; free virtual = 3465
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0_mig' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:75]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_tempmon' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_tempmon.v:69]
+	Parameter TCQ bound to: 100 - type: integer 
+	Parameter TEMP_MON_CONTROL bound to: INTERNAL - type: string 
+	Parameter XADC_CLK_PERIOD bound to: 5000 - type: integer 
+	Parameter tTEMPSAMPLE bound to: 10000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'XADC' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:105109]
+	Parameter INIT_40 bound to: 16'b0001000000000000 
+	Parameter INIT_41 bound to: 16'b0010111111111111 
+	Parameter INIT_42 bound to: 16'b0000100000000000 
+	Parameter INIT_48 bound to: 16'b0000000100000001 
+	Parameter INIT_49 bound to: 16'b0000000000000000 
+	Parameter INIT_4A bound to: 16'b0000000100000000 
+	Parameter INIT_4B bound to: 16'b0000000000000000 
+	Parameter INIT_4C bound to: 16'b0000000000000000 
+	Parameter INIT_4D bound to: 16'b0000000000000000 
+	Parameter INIT_4E bound to: 16'b0000000000000000 
+	Parameter INIT_4F bound to: 16'b0000000000000000 
+	Parameter INIT_50 bound to: 16'b1011010111101101 
+	Parameter INIT_51 bound to: 16'b0101011111100100 
+	Parameter INIT_52 bound to: 16'b1010000101000111 
+	Parameter INIT_53 bound to: 16'b1100101000110011 
+	Parameter INIT_54 bound to: 16'b1010100100111010 
+	Parameter INIT_55 bound to: 16'b0101001011000110 
+	Parameter INIT_56 bound to: 16'b1001010101010101 
+	Parameter INIT_57 bound to: 16'b1010111001001110 
+	Parameter INIT_58 bound to: 16'b0101100110011001 
+	Parameter INIT_5C bound to: 16'b0101000100010001 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'XADC' (1#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:105109]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_tempmon' (2#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_tempmon.v:69]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_iodelay_ctrl' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_iodelay_ctrl.v:80]
+	Parameter TCQ bound to: 100 - type: integer 
+	Parameter IODELAY_GRP0 bound to: MIG_7SERIES_0_IODELAY_MIG0 - type: string 
+	Parameter IODELAY_GRP1 bound to: MIG_7SERIES_0_IODELAY_MIG1 - type: string 
+	Parameter REFCLK_TYPE bound to: NO_BUFFER - type: string 
+	Parameter SYSCLK_TYPE bound to: NO_BUFFER - type: string 
+	Parameter SYS_RST_PORT bound to: FALSE - type: string 
+	Parameter RST_ACT_LOW bound to: 1 - type: integer 
+	Parameter DIFF_TERM_REFCLK bound to: TRUE - type: string 
+	Parameter FPGA_SPEED_GRADE bound to: 1 - type: integer 
+	Parameter REF_CLK_MMCM_IODELAY_CTRL bound to: FALSE - type: string 
+INFO: [Synth 8-6157] synthesizing module 'IDELAYCTRL' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:53753]
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYCTRL' (3#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:53753]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_iodelay_ctrl' (4#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_iodelay_ctrl.v:80]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_clk_ibuf' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_clk_ibuf.v:68]
+	Parameter SYSCLK_TYPE bound to: NO_BUFFER - type: string 
+	Parameter DIFF_TERM_SYSCLK bound to: TRUE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_clk_ibuf' (5#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_clk_ibuf.v:68]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_infrastructure' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:78]
+	Parameter TCQ bound to: 100 - type: integer 
+	Parameter CLKIN_PERIOD bound to: 6000 - type: integer 
+	Parameter nCK_PER_CLK bound to: 4 - type: integer 
+	Parameter SYSCLK_TYPE bound to: NO_BUFFER - type: string 
+	Parameter CLKFBOUT_MULT bound to: 8 - type: integer 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT1_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT2_DIVIDE bound to: 64 - type: integer 
+	Parameter CLKOUT3_DIVIDE bound to: 16 - type: integer 
+	Parameter MMCM_VCO bound to: 666 - type: integer 
+	Parameter MMCM_MULT_F bound to: 8 - type: integer 
+	Parameter MMCM_DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter RST_ACT_LOW bound to: 1 - type: integer 
+	Parameter tCK bound to: 3000 - type: integer 
+	Parameter MEM_TYPE bound to: DDR3 - type: string 
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:59963]
+	Parameter BANDWIDTH bound to: HIGH - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 8.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 12.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 16.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: TRUE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: BUF_IN - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.000000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (6#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:59963]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (7#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:1083]
+INFO: [Synth 8-6157] synthesizing module 'PLLE2_ADV' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84453]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 8 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 6.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 64 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.062500 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 9.843750 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 16 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_DIVIDE bound to: 8 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 168.750000 - type: double 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter COMPENSATION bound to: INTERNAL - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'PLLE2_ADV' (8#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84453]
+INFO: [Synth 8-6157] synthesizing module 'BUFH' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:1319]
+INFO: [Synth 8-6155] done synthesizing module 'BUFH' (9#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:1319]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_infrastructure' (10#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/clocking/mig_7series_v4_2_infrastructure.v:78]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_memc_ui_top_std' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_memc_ui_top_std.v:72]
+	Parameter TCQ bound to: 100 - type: integer 
+	Parameter DDR3_VDD_OP_VOLT bound to: 135 - type: string 
+	Parameter PAYLOAD_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_CMD_MODE bound to: 1T - type: string 
+	Parameter AL bound to: 0 - type: string 
+	Parameter BANK_WIDTH bound to: 3 - type: integer 
+	Parameter BM_CNT_WIDTH bound to: 2 - type: integer 
+	Parameter BURST_MODE bound to: 8 - type: string 
+	Parameter BURST_TYPE bound to: SEQ - type: string 
+	Parameter CA_MIRROR bound to: OFF - type: string 
+	Parameter CK_WIDTH bound to: 1 - type: integer 
+	Parameter CL bound to: 5 - type: integer 
+	Parameter COL_WIDTH bound to: 10 - type: integer 
+	Parameter CMD_PIPE_PLUS1 bound to: ON - type: string 
+	Parameter CS_WIDTH bound to: 1 - type: integer 
+	Parameter CKE_WIDTH bound to: 1 - type: integer 
+	Parameter CWL bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter DATA_BUF_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DM_WIDTH bound to: 2 - type: integer 
+	Parameter DQ_CNT_WIDTH bound to: 4 - type: integer 
+	Parameter DQ_WIDTH bound to: 16 - type: integer 
+	Parameter DQS_CNT_WIDTH bound to: 1 - type: integer 
+	Parameter DQS_WIDTH bound to: 2 - type: integer 
+	Parameter DRAM_TYPE bound to: DDR3 - type: string 
+	Parameter DRAM_WIDTH bound to: 8 - type: integer 
+	Parameter ECC bound to: OFF - type: string 
+	Parameter ECC_WIDTH bound to: 0 - type: integer 
+	Parameter ECC_TEST bound to: OFF - type: string 
+	Parameter MC_ERR_ADDR_WIDTH bound to: 28 - type: integer 
+	Parameter MASTER_PHY_CTL bound to: 0 - type: integer 
+	Parameter nAL bound to: 0 - type: integer 
+	Parameter nBANK_MACHS bound to: 4 - type: integer 
+	Parameter nCK_PER_CLK bound to: 4 - type: integer 
+	Parameter nCS_PER_RANK bound to: 1 - type: integer 
+	Parameter ORDERING bound to: NORM - type: string 
+	Parameter IBUF_LPWR_MODE bound to: OFF - type: string 
+	Parameter BANK_TYPE bound to: HR_IO - type: string 
+	Parameter DATA_IO_PRIM_TYPE bound to: HR_LP - type: string 
+	Parameter DATA_IO_IDLE_PWRDWN bound to: ON - type: string 
+	Parameter IODELAY_GRP0 bound to: MIG_7SERIES_0_IODELAY_MIG0 - type: string 
+	Parameter IODELAY_GRP1 bound to: MIG_7SERIES_0_IODELAY_MIG1 - type: string 
+	Parameter FPGA_SPEED_GRADE bound to: 1 - type: integer 
+	Parameter OUTPUT_DRV bound to: LOW - type: string 
+	Parameter REG_CTRL bound to: OFF - type: string 
+	Parameter RTT_NOM bound to: 40 - type: string 
+	Parameter RTT_WR bound to: OFF - type: string 
+	Parameter STARVE_LIMIT bound to: 2 - type: integer 
+	Parameter tCK bound to: 3000 - type: integer 
+	Parameter tCKE bound to: 5625 - type: integer 
+	Parameter tFAW bound to: 45000 - type: integer 
+	Parameter tPRDI bound to: 1000000 - type: integer 
+	Parameter tRAS bound to: 36000 - type: integer 
+	Parameter tRCD bound to: 13500 - type: integer 
+	Parameter tREFI bound to: 7800000 - type: integer 
+	Parameter tRFC bound to: 160000 - type: integer 
+	Parameter tRP bound to: 13500 - type: integer 
+	Parameter tRRD bound to: 7500 - type: integer 
+	Parameter tRTP bound to: 7500 - type: integer 
+	Parameter tWTR bound to: 7500 - type: integer 
+	Parameter tZQI bound to: 128000000 - type: integer 
+	Parameter tZQCS bound to: 64 - type: integer 
+	Parameter USER_REFRESH bound to: OFF - type: string 
+	Parameter TEMP_MON_EN bound to: ON - type: string 
+	Parameter WRLVL bound to: ON - type: string 
+	Parameter DEBUG_PORT bound to: OFF - type: string 
+	Parameter CAL_WIDTH bound to: HALF - type: string 
+	Parameter RANK_WIDTH bound to: 1 - type: integer 
+	Parameter RANKS bound to: 1 - type: integer 
+	Parameter ODT_WIDTH bound to: 1 - type: integer 
+	Parameter ROW_WIDTH bound to: 14 - type: integer 
+	Parameter ADDR_WIDTH bound to: 28 - type: integer 
+	Parameter APP_MASK_WIDTH bound to: 16 - type: integer 
+	Parameter APP_DATA_WIDTH bound to: 128 - type: integer 
+	Parameter BYTE_LANES_B0 bound to: 4'b1111 
+	Parameter BYTE_LANES_B1 bound to: 4'b0000 
+	Parameter BYTE_LANES_B2 bound to: 4'b0000 
+	Parameter BYTE_LANES_B3 bound to: 4'b0000 
+	Parameter BYTE_LANES_B4 bound to: 4'b0000 
+	Parameter DATA_CTL_B0 bound to: 4'b1100 
+	Parameter DATA_CTL_B1 bound to: 4'b0000 
+	Parameter DATA_CTL_B2 bound to: 4'b0000 
+	Parameter DATA_CTL_B3 bound to: 4'b0000 
+	Parameter DATA_CTL_B4 bound to: 4'b0000 
+	Parameter PHY_0_BITLANES bound to: 48'b001111111110001111111110111111111111101111111111 
+	Parameter PHY_1_BITLANES bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PHY_2_BITLANES bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter CK_BYTE_MAP bound to: 144'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ADDR_MAP bound to: 192'b000000000000000000000000000000000000000000000010000000000100000000001001000000000111000000000001000000000101000000000110000000000011000000010000000000010010000000010100000000010001000000011010 
+	Parameter BANK_MAP bound to: 36'b000000011011000000010111000000010011 
+	Parameter CAS_MAP bound to: 12'b000000010101 
+	Parameter CKE_ODT_BYTE_MAP bound to: 8'b00000000 
+	Parameter CKE_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011001 
+	Parameter ODT_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000 
+	Parameter CKE_ODT_AUX bound to: FALSE - type: string 
+	Parameter CS_MAP bound to: 120'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001011 
+	Parameter PARITY_MAP bound to: 12'b000000000000 
+	Parameter RAS_MAP bound to: 12'b000000010110 
+	Parameter WE_MAP bound to: 12'b000000011000 
+	Parameter DQS_BYTE_MAP bound to: 144'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000011 
+	Parameter DATA0_MAP bound to: 96'b000000110100000000110010000000111000000000110101000000110001000000110111000000110110000000110011 
+	Parameter DATA1_MAP bound to: 96'b000000100011000000100110000000100010000000101000000000100101000000100111000000100001000000100100 
+	Parameter DATA2_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA3_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA4_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA5_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA6_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA7_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA8_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA9_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA10_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA11_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA12_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA13_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA14_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA15_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA16_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter DATA17_MAP bound to: 96'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter MASK0_MAP bound to: 108'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000101001000000111001 
+	Parameter MASK1_MAP bound to: 108'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter SLOT_0_CONFIG bound to: 8'b00000001 
+	Parameter SLOT_1_CONFIG bound to: 8'b00000000 
+	Parameter MEM_ADDR_ORDER bound to: BANK_ROW_COLUMN - type: string 
+	Parameter CALIB_ROW_ADD bound to: 16'b0000000000000000 
+	Parameter CALIB_COL_ADD bound to: 12'b000000000000 
+	Parameter CALIB_BA_ADD bound to: 3'b000 
+	Parameter SIM_BYPASS_INIT_CAL bound to: OFF - type: string 
+	Parameter REFCLK_FREQ bound to: 200.000000 - type: double 
+	Parameter USE_CS_PORT bound to: 1 - type: integer 
+	Parameter USE_DM_PORT bound to: 1 - type: integer 
+	Parameter USE_ODT_PORT bound to: 1 - type: integer 
+	Parameter IDELAY_ADJ bound to: OFF - type: string 
+	Parameter FINE_PER_BIT bound to: OFF - type: string 
+	Parameter CENTER_COMP_MODE bound to: OFF - type: string 
+	Parameter PI_VAL_ADJ bound to: OFF - type: string 
+	Parameter SKIP_CALIB bound to: FALSE - type: string 
+	Parameter TAPSPERKCLK bound to: 112 - type: integer 
+	Parameter FPGA_VOLT_TYPE bound to: N - type: string 
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_mem_intfc' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_mem_intfc.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_mc' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v:73]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_rank_mach' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_mach.v:71]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_rank_cntrl' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v:79]
+INFO: [Synth 8-6157] synthesizing module 'SRLC32E' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:101111]
+INFO: [Synth 8-6155] done synthesizing module 'SRLC32E' (11#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:101111]
+WARNING: [Synth 8-567] referenced signal 'periodic_rd_generation.periodic_rd_timer_one' should be on the sensitivity list [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v:509]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_cntrl' (12#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_cntrl.v:79]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_rank_common' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_common.v:72]
+WARNING: [Synth 8-567] referenced signal 'zq_cntrl.zq_tick' should be on the sensitivity list [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_common.v:172]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_round_robin_arb' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb' (13#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized0' (13#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_common' (14#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_common.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_rank_mach' (15#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_rank_mach.v:71]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_mach' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_mach.v:72]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_cntrl' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_compare' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_compare.v:74]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_compare' (16#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_compare.v:74]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_state' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state' (17#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_queue' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue' (18#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_state__parameterized0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized0' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_queue__parameterized0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized0' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized0' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized1' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_state__parameterized1' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized1' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_queue__parameterized1' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized1' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized1' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized2' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_state__parameterized2' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_state__parameterized2' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_state.v:141]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_queue__parameterized2' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_queue__parameterized2' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_queue.v:174]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_cntrl__parameterized2' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_cntrl.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_bank_common' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_common.v:73]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_common' (20#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_common.v:73]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_arb_mux' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_mux.v:69]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_arb_row_col' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:83]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized1' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_round_robin_arb__parameterized1' (20#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_round_robin_arb.v:121]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_row_col' (21#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_row_col.v:83]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_arb_select' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_select' (22#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_select.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_arb_mux' (23#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_arb_mux.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_bank_mach' (24#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_bank_mach.v:72]
+WARNING: [Synth 8-7071] port 'idle' of module 'mig_7series_v4_2_bank_mach' is unconnected for instance 'bank_mach0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v:670]
+WARNING: [Synth 8-7023] instance 'bank_mach0' of module 'mig_7series_v4_2_bank_mach' has 74 connections declared, but only 73 given [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v:670]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_col_mach' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_col_mach.v:88]
+INFO: [Synth 8-6157] synthesizing module 'RAM32M' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:93030]
+INFO: [Synth 8-6155] done synthesizing module 'RAM32M' (25#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:93030]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_col_mach' (26#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_col_mach.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_mc' (27#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/controller/mig_7series_v4_2_mc.v:73]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_top' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_mc_phy_wrapper' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:71]
+INFO: [Synth 8-6157] synthesizing module 'OBUF' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:66298]
+INFO: [Synth 8-6155] done synthesizing module 'OBUF' (28#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:66298]
+INFO: [Synth 8-6157] synthesizing module 'OBUFT' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:66628]
+INFO: [Synth 8-6155] done synthesizing module 'OBUFT' (29#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:66628]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF_INTERMDISABLE' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:56830]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF_INTERMDISABLE' (30#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:56830]
+INFO: [Synth 8-6157] synthesizing module 'IOBUFDS_INTERMDISABLE' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:56406]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUFDS_INTERMDISABLE' (31#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:56406]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo' (32#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+WARNING: [Synth 8-7071] port 'afull' of module 'mig_7series_v4_2_ddr_of_pre_fifo' is unconnected for instance 'phy_ctl_pre_fifo_0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1428]
+WARNING: [Synth 8-7023] instance 'phy_ctl_pre_fifo_0' of module 'mig_7series_v4_2_ddr_of_pre_fifo' has 8 connections declared, but only 7 given [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1428]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized0' (32#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+WARNING: [Synth 8-7071] port 'afull' of module 'mig_7series_v4_2_ddr_of_pre_fifo' is unconnected for instance 'phy_ctl_pre_fifo_1' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1445]
+WARNING: [Synth 8-7023] instance 'phy_ctl_pre_fifo_1' of module 'mig_7series_v4_2_ddr_of_pre_fifo' has 8 connections declared, but only 7 given [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1445]
+WARNING: [Synth 8-7071] port 'afull' of module 'mig_7series_v4_2_ddr_of_pre_fifo' is unconnected for instance 'phy_ctl_pre_fifo_2' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1462]
+WARNING: [Synth 8-7023] instance 'phy_ctl_pre_fifo_2' of module 'mig_7series_v4_2_ddr_of_pre_fifo' has 8 connections declared, but only 7 given [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1462]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_mc_phy' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_4lanes' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:72]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_lane' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized1' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_of_pre_fifo__parameterized1' (32#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_of_pre_fifo.v:76]
+INFO: [Synth 8-6157] synthesizing module 'ODDR' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:69805]
+INFO: [Synth 8-6155] done synthesizing module 'ODDR' (33#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:69805]
+INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:66312]
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (34#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:66312]
+INFO: [Synth 8-6157] synthesizing module 'PHASER_OUT_PHY' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84276]
+INFO: [Synth 8-6155] done synthesizing module 'PHASER_OUT_PHY' (35#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84276]
+INFO: [Synth 8-6157] synthesizing module 'OUT_FIFO' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70527]
+INFO: [Synth 8-6155] done synthesizing module 'OUT_FIFO' (36#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70527]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_group_io' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70412]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (37#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70412]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io' (38#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane' (39#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized0' (39#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized0' (39#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized1' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_if_post_fifo' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_if_post_fifo.v:68]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_if_post_fifo.v:110]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_if_post_fifo' (40#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_if_post_fifo.v:68]
+INFO: [Synth 8-6157] synthesizing module 'PHASER_IN_PHY' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84139]
+INFO: [Synth 8-6155] done synthesizing module 'PHASER_IN_PHY' (41#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84139]
+INFO: [Synth 8-6157] synthesizing module 'IN_FIFO' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:56120]
+INFO: [Synth 8-6155] done synthesizing module 'IN_FIFO' (42#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:56120]
+INFO: [Synth 8-6157] synthesizing module 'PHASER_OUT_PHY__parameterized0' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84276]
+INFO: [Synth 8-6155] done synthesizing module 'PHASER_OUT_PHY__parameterized0' (42#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84276]
+INFO: [Synth 8-6157] synthesizing module 'OUT_FIFO__parameterized0' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70527]
+INFO: [Synth 8-6155] done synthesizing module 'OUT_FIFO__parameterized0' (42#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70527]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized1' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6157] synthesizing module 'IDELAYE2' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:53766]
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2' (43#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:53766]
+INFO: [Synth 8-6157] synthesizing module 'ISERDESE2' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:58568]
+INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (44#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:58568]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2__parameterized0' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70412]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized0' (44#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70412]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2__parameterized1' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70412]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized1' (44#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:70412]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_group_io__parameterized1' (44#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_group_io.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized1' (44#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized2' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_byte_lane__parameterized2' (44#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_byte_lane.v:70]
+INFO: [Synth 8-6157] synthesizing module 'BUFIO' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:1344]
+INFO: [Synth 8-6155] done synthesizing module 'BUFIO' (45#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:1344]
+INFO: [Synth 8-6157] synthesizing module 'PHY_CONTROL' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84367]
+INFO: [Synth 8-6155] done synthesizing module 'PHY_CONTROL' (46#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84367]
+INFO: [Synth 8-226] default block is never used [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:1557]
+INFO: [Synth 8-6157] synthesizing module 'PHASER_REF' [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84351]
+INFO: [Synth 8-6155] done synthesizing module 'PHASER_REF' (47#1) [/home/chilin/Xilinx/Vivado/2021.1/scripts/rt/data/unisim_comp.v:84351]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_4lanes' (48#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_4lanes.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_mc_phy' (49#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy.v:70]
+WARNING: [Synth 8-689] width (12) of port connection 'pi_dqs_found_lanes' does not match port width (4) of module 'mig_7series_v4_2_ddr_mc_phy' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1671]
+WARNING: [Synth 8-689] width (12) of port connection 'pi_phase_locked_lanes' does not match port width (4) of module 'mig_7series_v4_2_ddr_mc_phy' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1679]
+WARNING: [Synth 8-7071] port 'of_data_a_full' of module 'mig_7series_v4_2_ddr_mc_phy' is unconnected for instance 'u_ddr_mc_phy' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1579]
+WARNING: [Synth 8-7023] instance 'u_ddr_mc_phy' of module 'mig_7series_v4_2_ddr_mc_phy' has 89 connections declared, but only 88 given [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:1579]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_mc_phy_wrapper' (50#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_mc_phy_wrapper.v:71]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_calib_top' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:82]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_wrlvl' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrlvl.v:90]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrlvl.v:797]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_wrlvl' (51#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrlvl.v:90]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay' (52#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay.v:68]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr' (53#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_dqs_found_cal_hr.v:79]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_rdlvl' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:81]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:2746]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_rdlvl' (54#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_rdlvl.v:81]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_prbs_gen' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:92]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_prbs_gen' (55#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_prbs_gen.v:92]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_init' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:89]
+INFO: [Synth 8-226] default block is never used [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:5273]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_init' (56#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_init.v:89]
+WARNING: [Synth 8-7071] port 'complex_oclk_prech_req' of module 'mig_7series_v4_2_ddr_phy_init' is unconnected for instance 'u_ddr_phy_init' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:1367]
+WARNING: [Synth 8-7023] instance 'u_ddr_phy_init' of module 'mig_7series_v4_2_ddr_phy_init' has 131 connections declared, but only 130 given [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:1367]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_wrcal' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:77]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:1130]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_wrcal' (57#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_wrcal.v:77]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ddr_phy_tempmon' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_tempmon' (58#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_tempmon.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_calib_top' (59#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_calib_top.v:82]
+WARNING: [Synth 8-689] width (12) of port connection 'pi_dqs_found_lanes' does not match port width (4) of module 'mig_7series_v4_2_ddr_calib_top' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.v:1340]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ddr_phy_top' (60#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/phy/mig_7series_v4_2_ddr_phy_top.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_mem_intfc' (61#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_mem_intfc.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ui_top' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_top.v:71]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ui_cmd' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_cmd.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_cmd' (62#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_cmd.v:70]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ui_wr_data' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:131]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:342]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:380]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_wr_data' (63#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_wr_data.v:131]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_v4_2_ui_rd_data' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:140]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:406]
+WARNING: [Synth 8-567] referenced signal 'not_strict_mode.occ_cnt_r' should be on the sensitivity list [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:403]
+WARNING: [Synth 8-567] referenced signal 'not_strict_mode.free_rd_buf' should be on the sensitivity list [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:403]
+WARNING: [Synth 8-567] referenced signal 'not_strict_mode.occ_minus_one' should be on the sensitivity list [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:403]
+WARNING: [Synth 8-567] referenced signal 'not_strict_mode.occ_plus_one' should be on the sensitivity list [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:403]
+WARNING: [Synth 8-567] referenced signal 'not_strict_mode.rd_data_buf_addr_r_lcl' should be on the sensitivity list [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:432]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_rd_data' (64#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_rd_data.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_ui_top' (65#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ui/mig_7series_v4_2_ui_top.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_v4_2_memc_ui_top_std' (66#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/ip_top/mig_7series_v4_2_memc_ui_top_std.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0_mig' (67#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (68#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.v:70]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 2438.695 ; gain = 0.000 ; free physical = 4651 ; free virtual = 5286
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:33 . Memory (MB): peak = 2438.695 ; gain = 0.000 ; free physical = 4517 ; free virtual = 5208
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:33 . Memory (MB): peak = 2438.695 ; gain = 0.000 ; free physical = 4517 ; free virtual = 5208
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.20 ; elapsed = 00:00:00.19 . Memory (MB): peak = 2438.695 ; gain = 0.000 ; free physical = 4401 ; free virtual = 5114
+INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0_ooc.xdc]
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:346]
+WARNING: [Designutils 20-1567] Use of 'set_multicycle_path' with '-hold' is not supported by synthesis. The constraint will not be passed to synthesis. [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:353]
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mig_7series_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/mig_7series_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2576.375 ; gain = 0.000 ; free physical = 4143 ; free virtual = 4863
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 70 instances were transformed.
+  IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 51 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2576.375 ; gain = 0.000 ; free physical = 4133 ; free virtual = 4858
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 2576.375 ; gain = 137.680 ; free physical = 4247 ; free virtual = 5078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 2576.375 ; gain = 137.680 ; free physical = 4252 ; free virtual = 5083
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_n[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc, line 27).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_p[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc, line 28).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:44 . Memory (MB): peak = 2576.375 ; gain = 137.680 ; free physical = 4448 ; free virtual = 5280
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'xadc_supplied_temperature.tempmon_state_reg' in module 'mig_7series_v4_2_tempmon'
+INFO: [Synth 8-802] inferred FSM for state register 'wl_state_r_reg' in module 'mig_7series_v4_2_ddr_phy_wrlvl'
+INFO: [Synth 8-802] inferred FSM for state register 'fine_adj_state_r_reg' in module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr'
+INFO: [Synth 8-802] inferred FSM for state register 'cal1_state_r_reg' in module 'mig_7series_v4_2_ddr_phy_rdlvl'
+INFO: [Synth 8-802] inferred FSM for state register 'tempmon_state_reg' in module 'mig_7series_v4_2_ddr_phy_tempmon'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               INIT_IDLE |                             0001 |                              000
+       REQUEST_READ_TEMP |                             1000 |                              001
+           WAIT_FOR_READ |                             0100 |                              010
+                    READ |                             0010 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'xadc_supplied_temperature.tempmon_state_reg' using encoding 'one-hot' in module 'mig_7series_v4_2_tempmon'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 WL_IDLE |                            01110 |                            00000
+                 WL_INIT |                            10010 |                            00001
+        WL_INIT_FINE_INC |                            01100 |                            00010
+  WL_INIT_FINE_INC_WAIT1 |                            01000 |                            00011
+   WL_INIT_FINE_INC_WAIT |                            01001 |                            00100
+        WL_INIT_FINE_DEC |                            11001 |                            00101
+  WL_INIT_FINE_DEC_WAIT1 |                            10111 |                            11001
+   WL_INIT_FINE_DEC_WAIT |                            11000 |                            00110
+                 WL_WAIT |                            00110 |                            01000
+           WL_EDGE_CHECK |                            11011 |                            01001
+              WL_DQS_CNT |                            10100 |                            01011
+             WL_FINE_DEC |                            00000 |                            01110
+       WL_FINE_DEC_WAIT1 |                            00001 |                            11010
+        WL_FINE_DEC_WAIT |                            10001 |                            01111
+            WL_CORSE_DEC |                            10110 |                            10100
+       WL_CORSE_DEC_WAIT |                            11010 |                            10101
+      WL_CORSE_DEC_WAIT1 |                            10101 |                            10110
+        WL_2RANK_DQS_CNT |                            00010 |                            01101
+            WL_DQS_CHECK |                            00011 |                            01010
+             WL_FINE_INC |                            01101 |                            00111
+        WL_FINE_INC_WAIT |                            10011 |                            10111
+      WL_2RANK_FINAL_TAP |                            01111 |                            11000
+            WL_CORSE_INC |                            01011 |                            10000
+   WL_CORSE_INC_WAIT_TMP |                            10000 |                            11011
+       WL_CORSE_INC_WAIT |                            01010 |                            10001
+      WL_CORSE_INC_WAIT1 |                            00111 |                            10010
+      WL_CORSE_INC_WAIT2 |                            00101 |                            10011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wl_state_r_reg' using encoding 'sequential' in module 'mig_7series_v4_2_ddr_phy_wrlvl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+           FINE_ADJ_IDLE |                             0000 |                             0000
+                RST_WAIT |                             0001 |                             0011
+           FINE_ADJ_DONE |                             0010 |                             1111
+            RST_POSTWAIT |                             0011 |                             0001
+           RST_POSTWAIT1 |                             0100 |                             0010
+           FINE_ADJ_INIT |                             0101 |                             0100
+                FINE_INC |                             0110 |                             0101
+           FINE_INC_WAIT |                             0111 |                             0110
+        FINE_INC_PREWAIT |                             1000 |                             0111
+          DETECT_PREWAIT |                             1001 |                             1000
+         DETECT_DQSFOUND |                             1010 |                             1001
+                FINE_DEC |                             1011 |                             1011
+           FINE_DEC_WAIT |                             1100 |                             1100
+        FINE_DEC_PREWAIT |                             1101 |                             1101
+              FINAL_WAIT |                             1110 |                             1110
+              PRECH_WAIT |                             1111 |                             1010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fine_adj_state_r_reg' using encoding 'sequential' in module 'mig_7series_v4_2_ddr_phy_dqs_found_cal_hr'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+               CAL1_IDLE | 00000000000000000000000000010000000 |                           000000
+       CAL1_NEW_DQS_WAIT | 00000000000000000000010000000000000 |                           000001
+   CAL1_STORE_FIRST_WAIT | 00000000000000000010000000000000000 |                           000010
+         CAL1_PAT_DETECT | 00000000000000100000000000000000000 |                           000011
+    CAL1_DQ_IDEL_TAP_INC | 00000000000000000000000000000000100 |                           000100
+CAL1_DQ_IDEL_TAP_INC_WAIT | 00000000000000000000000000000001000 |                           000101
+     CAL1_MPR_PAT_DETECT | 00000000000000000000000010000000000 |                           011111
+         CAL1_VALID_WAIT | 10000000000000000000000000000000000 |                           011110
+        CAL1_DETECT_EDGE | 00000000000001000000000000000000000 |                           001000
+          CAL1_CALC_IDEL | 00000100000000000000000000000000000 |                           001011
+        CAL1_CENTER_WAIT | 00000000000000000000000000000000001 |                           100010
+       CAL1_IDEL_DEC_CPT | 00000000000000000000000000000000010 |                           001100
+    CAL1_DQ_IDEL_TAP_DEC | 00000000000000000001000000000000000 |                           000110
+CAL1_DQ_IDEL_TAP_DEC_WAIT | 00100000000000000000000000000000000 |                           000111
+           CAL1_NEXT_DQS | 00000000000000000000000000000010000 |                           001110
+          CAL1_REGL_LOAD | 00000000000000000000000000001000000 |                           011011
+               CAL1_DONE | 00000000000000000000000000000100000 |                           001111
+    CAL1_NEW_DQS_PREWAIT | 00000000000000000000000000100000000 |                           100000
+   CAL1_MPR_NEW_DQS_WAIT | 00000000000000000000000001000000000 |                           011101
+  CAL1_IDEL_DEC_CPT_WAIT | 00000000000000000000100000000000000 |                           001101
+ CAL1_RD_STOP_FOR_PI_INC | 00000000000000000000000100000000000 |                           100001
+       CAL1_IDEL_INC_CPT | 00000000000000000000001000000000000 |                           001001
+  CAL1_IDEL_INC_CPT_WAIT | 00010000000000000000000000000000000 |                           001010
+          CAL1_RDLVL_ERR | 00000000000010000000000000000000000 |                           011100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'cal1_state_r_reg' using encoding 'one-hot' in module 'mig_7series_v4_2_ddr_phy_rdlvl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                    IDLE |                      00000000001 |                      00000000001
+                    INIT |                      00000000010 |                      00000000010
+                 NEUTRAL |                      00001000000 |                      00001000000
+                 ONE_DEC |                      00010000000 |                      00010000000
+                 TWO_DEC |                      00100000000 |                      00100000000
+               THREE_DEC |                      01000000000 |                      01000000000
+                FOUR_DEC |                      10000000000 |                      10000000000
+                 ONE_INC |                      00000100000 |                      00000100000
+                 TWO_INC |                      00000010000 |                      00000010000
+               THREE_INC |                      00000001000 |                      00000001000
+                FOUR_INC |                      00000000100 |                      00000000100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'tempmon_state_reg' in module 'mig_7series_v4_2_ddr_phy_tempmon'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:00:55 . Memory (MB): peak = 2576.375 ; gain = 137.680 ; free physical = 7823 ; free virtual = 8824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   32 Bit       Adders := 3     
+	   2 Input   13 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 15    
+	   2 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 4     
+	   2 Input    8 Bit       Adders := 6     
+	   2 Input    7 Bit       Adders := 3     
+	   2 Input    6 Bit       Adders := 28    
+	   3 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 35    
+	   2 Input    4 Bit       Adders := 29    
+	   2 Input    3 Bit       Adders := 21    
+	   3 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 51    
+	   3 Input    2 Bit       Adders := 3     
+	   4 Input    2 Bit       Adders := 5     
+	   5 Input    2 Bit       Adders := 1     
+	   8 Input    2 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 4     
+	   3 Input    1 Bit       Adders := 1     
+	   4 Input    1 Bit       Adders := 1     
+	   5 Input    1 Bit       Adders := 1     
+	   6 Input    1 Bit       Adders := 1     
+	   7 Input    1 Bit       Adders := 1     
+	   8 Input    1 Bit       Adders := 1     
+	   9 Input    1 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	              144 Bit    Registers := 1     
+	              128 Bit    Registers := 3     
+	               88 Bit    Registers := 1     
+	               80 Bit    Registers := 3     
+	               56 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	               30 Bit    Registers := 1     
+	               28 Bit    Registers := 2     
+	               16 Bit    Registers := 11    
+	               15 Bit    Registers := 4     
+	               14 Bit    Registers := 6     
+	               13 Bit    Registers := 1     
+	               12 Bit    Registers := 33    
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 12    
+	                8 Bit    Registers := 11    
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 57    
+	                5 Bit    Registers := 44    
+	                4 Bit    Registers := 72    
+	                3 Bit    Registers := 48    
+	                2 Bit    Registers := 63    
+	                1 Bit    Registers := 1521  
++---Muxes : 
+	   2 Input  128 Bit        Muxes := 5     
+	   4 Input  128 Bit        Muxes := 1     
+	   2 Input  127 Bit        Muxes := 1     
+	   2 Input   80 Bit        Muxes := 6     
+	   2 Input   56 Bit        Muxes := 1     
+	  24 Input   35 Bit        Muxes := 1     
+	   2 Input   35 Bit        Muxes := 22    
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   30 Bit        Muxes := 12    
+	   4 Input   30 Bit        Muxes := 4     
+	   2 Input   21 Bit        Muxes := 8     
+	   2 Input   16 Bit        Muxes := 3     
+	   3 Input   16 Bit        Muxes := 1     
+	   3 Input   14 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 8     
+	   4 Input   14 Bit        Muxes := 1     
+	   8 Input   14 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 5     
+	  12 Input   11 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 7     
+	   4 Input    9 Bit        Muxes := 6     
+	   2 Input    9 Bit        Muxes := 18    
+	   2 Input    8 Bit        Muxes := 57    
+	   5 Input    8 Bit        Muxes := 1     
+	   6 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 64    
+	   3 Input    7 Bit        Muxes := 2     
+	   4 Input    7 Bit        Muxes := 1     
+	   5 Input    7 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 84    
+	   4 Input    6 Bit        Muxes := 8     
+	  27 Input    6 Bit        Muxes := 4     
+	   5 Input    6 Bit        Muxes := 2     
+	  16 Input    6 Bit        Muxes := 1     
+	  24 Input    6 Bit        Muxes := 5     
+	   3 Input    6 Bit        Muxes := 4     
+	   2 Input    5 Bit        Muxes := 40    
+	   8 Input    5 Bit        Muxes := 2     
+	  27 Input    5 Bit        Muxes := 1     
+	  58 Input    5 Bit        Muxes := 1     
+	  24 Input    5 Bit        Muxes := 1     
+	   4 Input    5 Bit        Muxes := 3     
+	   3 Input    5 Bit        Muxes := 8     
+	   2 Input    4 Bit        Muxes := 59    
+	  32 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 2     
+	   8 Input    4 Bit        Muxes := 1     
+	   7 Input    4 Bit        Muxes := 1     
+	  10 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 68    
+	  27 Input    3 Bit        Muxes := 6     
+	   3 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 3     
+	   9 Input    3 Bit        Muxes := 2     
+	   8 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 93    
+	   4 Input    2 Bit        Muxes := 6     
+	   3 Input    2 Bit        Muxes := 8     
+	   8 Input    2 Bit        Muxes := 4     
+	  27 Input    2 Bit        Muxes := 1     
+	  24 Input    2 Bit        Muxes := 2     
+	   5 Input    2 Bit        Muxes := 1     
+	  10 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 481   
+	   3 Input    1 Bit        Muxes := 14    
+	   8 Input    1 Bit        Muxes := 4     
+	   4 Input    1 Bit        Muxes := 205   
+	  27 Input    1 Bit        Muxes := 27    
+	   5 Input    1 Bit        Muxes := 1     
+	  16 Input    1 Bit        Muxes := 21    
+	  24 Input    1 Bit        Muxes := 30    
+	  10 Input    1 Bit        Muxes := 17    
+	  12 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:53 ; elapsed = 00:02:11 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8419 ; free virtual = 9545
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------------------------+------------+---------------+----------------+
+|Module Name                   | RTL Object | Depth x Width | Implemented As | 
++------------------------------+------------+---------------+----------------+
+|mig_7series_v4_2_ddr_prbs_gen | mem_out    | 256x18        | LUT            | 
+|mig_7series_v4_2_ddr_prbs_gen | mem_out    | 256x18        | LUT            | 
++------------------------------+------------+---------------+----------------+
+
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++--------------+---------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|Module Name   | RTL Object                                                                            | Inference | Size (Depth x Width) | Primitives   | 
++--------------+---------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|mig_7series_0 | of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg                                             | Implied   | 16 x 80              | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.u_ddr_if_post_fifo/mem_reg | Implied   | 4 x 80               | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_D.ddr_byte_lane_D/dq_gen_40.if_post_fifo_gen.u_ddr_if_post_fifo/mem_reg | Implied   | 4 x 80               | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_D.ddr_byte_lane_D/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14  | 
++--------------+---------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3321] set_false_path : Empty through list for constraint at line 359 of /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc. [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:359]
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:58 ; elapsed = 00:02:15 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8321 ; free virtual = 9448
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:58 ; elapsed = 00:02:16 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8313 ; free virtual = 9440
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++--------------+---------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|Module Name   | RTL Object                                                                            | Inference | Size (Depth x Width) | Primitives   | 
++--------------+---------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+|mig_7series_0 | of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg                                             | Implied   | 16 x 80              | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_C.ddr_byte_lane_C/dq_gen_40.if_post_fifo_gen.u_ddr_if_post_fifo/mem_reg | Implied   | 4 x 80               | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_D.ddr_byte_lane_D/dq_gen_40.if_post_fifo_gen.u_ddr_if_post_fifo/mem_reg | Implied   | 4 x 80               | RAM32M x 14  | 
+|mig_7series_0 | ddr_byte_lane_D.ddr_byte_lane_D/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg             | Implied   | 16 x 80              | RAM32M x 14  | 
++--------------+---------------------------------------------------------------------------------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:02 ; elapsed = 00:02:20 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8318 ; free virtual = 9445
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:05 ; elapsed = 00:02:22 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8316 ; free virtual = 9449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:05 ; elapsed = 00:02:22 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8316 ; free virtual = 9449
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:05 ; elapsed = 00:02:23 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8317 ; free virtual = 9450
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:05 ; elapsed = 00:02:23 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8317 ; free virtual = 9450
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:06 ; elapsed = 00:02:23 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8316 ; free virtual = 9450
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:06 ; elapsed = 00:02:23 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8316 ; free virtual = 9450
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name   | RTL Name                                                                                                                                                                                       | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/rclk_delay_reg[11]                                           | 12     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/rst_r4_reg | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/mb_wrlvl_inst.u_ddr_phy_wrlvl/phy_ctl_ready_r5_reg                                                               | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/mb_wrlvl_inst.u_ddr_phy_ck_addr_cmd_delay/delay_done_r4_reg                                                      | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/dqsfind_calib_left.u_ddr_phy_dqs_found_cal_hr/init_dqsfound_done_r5_reg                                          | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/u_ddr_phy_init/wrlvl_rank_done_r7_reg                                                                            | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/u_ddr_phy_init/prech_done_reg                                                                                    | 17     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/u_ddr_phy_init/wrcal_start_dly_r_reg[5]                                                                          | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/u_ddr_phy_init/rdlvl_start_dly0_r_reg[14]                                                                        | 15     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/u_ddr_phy_wrcal/gen_pat_match_div4.pat_data_match_valid_r_reg                                                    | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/u_ddr_phy_wrcal/gen_pat_match_div4.gen_pat_match[0].pat_match_rise2_r_reg[0]                                     | 3      | 4     | NO           | NO                 | YES               | 4      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/u_ddr_phy_wrcal/wrcal_pat_resume_reg                                                                             | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|mig_7series_0 | u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/reset_if_r9_reg                                                                                                  | 9      | 1     | NO           | NO                 | YES               | 1      | 0       | 
++--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------------+------+
+|      |Cell                  |Count |
++------+----------------------+------+
+|1     |BUFG                  |     3|
+|2     |BUFH                  |     1|
+|3     |BUFIO                 |     1|
+|4     |CARRY4                |   108|
+|5     |IDELAYCTRL            |     1|
+|6     |IDELAYE2              |    16|
+|7     |IN_FIFO               |     2|
+|8     |ISERDESE2             |    16|
+|9     |LUT1                  |   365|
+|10    |LUT2                  |   422|
+|11    |LUT3                  |   783|
+|12    |LUT4                  |   894|
+|13    |LUT5                  |  1051|
+|14    |LUT6                  |  1167|
+|15    |MMCME2_ADV            |     1|
+|16    |MUXF7                 |     4|
+|17    |ODDR                  |     5|
+|18    |OSERDESE2             |    43|
+|21    |OUT_FIFO              |     4|
+|23    |PHASER_IN_PHY         |     2|
+|24    |PHASER_OUT_PHY        |     4|
+|26    |PHASER_REF            |     1|
+|27    |PHY_CONTROL           |     1|
+|28    |PLLE2_ADV             |     1|
+|29    |RAM32M                |   118|
+|30    |RAM32X1D              |     4|
+|31    |SRL16E                |    16|
+|32    |SRLC32E               |     1|
+|33    |XADC                  |     1|
+|34    |FDCE                  |     2|
+|35    |FDPE                  |    73|
+|36    |FDRE                  |  3512|
+|37    |FDSE                  |    85|
+|38    |IOBUFDS_INTERMDISABLE |     2|
+|39    |IOBUF_INTERMDISABLE   |    16|
+|40    |OBUF                  |    24|
+|41    |OBUFDS                |     1|
+|42    |OBUFT                 |     2|
++------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:06 ; elapsed = 00:02:24 . Memory (MB): peak = 2840.328 ; gain = 401.633 ; free physical = 8316 ; free virtual = 9450
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:00 ; elapsed = 00:02:19 . Memory (MB): peak = 2840.328 ; gain = 263.953 ; free physical = 8366 ; free virtual = 9500
+Synthesis Optimization Complete : Time (s): cpu = 00:02:06 ; elapsed = 00:02:24 . Memory (MB): peak = 2840.336 ; gain = 401.633 ; free physical = 8366 ; free virtual = 9500
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.10 . Memory (MB): peak = 2840.336 ; gain = 0.000 ; free physical = 8449 ; free virtual = 9590
+INFO: [Netlist 29-17] Analyzing 293 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 16 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2872.344 ; gain = 0.000 ; free physical = 8378 ; free virtual = 9525
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 141 instances were transformed.
+  IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 118 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+Synth Design complete, checksum: 450025fc
+INFO: [Common 17-83] Releasing license: Synthesis
+217 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:19 ; elapsed = 00:02:29 . Memory (MB): peak = 2872.344 ; gain = 433.781 ; free physical = 8537 ; free virtual = 9684
+INFO: [Common 17-1381] The checkpoint '/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/mig_7series_0_synth_1/mig_7series_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mig_7series_0, cache-ID = 2566cd0228aaec4b
+INFO: [Coretcl 2-1174] Renamed 70 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/mig_7series_0_synth_1/mig_7series_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mig_7series_0_utilization_synth.rpt -pb mig_7series_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Dec  4 22:49:43 2021...

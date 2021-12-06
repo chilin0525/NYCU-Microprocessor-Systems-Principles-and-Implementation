@@ -1,0 +1,806 @@
+
+*** Running vivado
+    with args -log soc_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source soc_top.tcl
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source soc_top.tcl -notrace
+Command: synth_design -top soc_top -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 76679
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2473.633 ; gain = 0.000 ; free physical = 1282 ; free virtual = 7953
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'soc_top' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/soc_top.v:62]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'aquila_top' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/aquila_top.v:65]
+INFO: [Synth 8-6157] synthesizing module 'core_top' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/core_top.v:80]
+	Parameter HART_ID bound to: 0 - type: integer 
+	Parameter XLEN bound to: 32 - type: integer 
+	Parameter BPU_ENTRY_NUM bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'pipeline_control' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/pipeline_control.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_control' (2#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/pipeline_control.v:62]
+INFO: [Synth 8-6157] synthesizing module 'forwarding_unit' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/forwarding_unit.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'forwarding_unit' (3#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/forwarding_unit.v:59]
+INFO: [Synth 8-6157] synthesizing module 'bpu' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/bpu.v:59]
+	Parameter ENTRY_NUM bound to: 32 - type: integer 
+	Parameter XLEN bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'distri_ram' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/distri_ram.v:56]
+	Parameter ENTRY_NUM bound to: 32 - type: integer 
+	Parameter XLEN bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'distri_ram' (4#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/distri_ram.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'bpu' (5#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/bpu.v:59]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/reg_file.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (6#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/reg_file.v:56]
+INFO: [Synth 8-6157] synthesizing module 'program_counter' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/program_counter.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter' (7#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/program_counter.v:62]
+INFO: [Synth 8-6157] synthesizing module 'fetch' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/fetch.v:71]
+INFO: [Synth 8-6155] done synthesizing module 'fetch' (8#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/fetch.v:71]
+INFO: [Synth 8-6157] synthesizing module 'decode' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/decode.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'decode' (9#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/decode.v:58]
+INFO: [Synth 8-6157] synthesizing module 'execute' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/execute.v:58]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/alu.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (10#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/alu.v:57]
+INFO: [Synth 8-6157] synthesizing module 'muldiv' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/muldiv.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'muldiv' (11#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/muldiv.v:68]
+INFO: [Synth 8-6157] synthesizing module 'bcu' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/bcu.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'bcu' (12#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/bcu.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'execute' (13#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/execute.v:58]
+INFO: [Synth 8-6157] synthesizing module 'memory' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/memory.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (14#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/memory.v:58]
+INFO: [Synth 8-6157] synthesizing module 'writeback' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/writeback.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'writeback' (15#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/writeback.v:56]
+INFO: [Synth 8-6157] synthesizing module 'csr_file' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/csr_file.v:67]
+	Parameter HART_ID bound to: 0 - type: integer 
+WARNING: [Synth 8-151] case item 12'b110000000000 is unreachable [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/csr_file.v:573]
+WARNING: [Synth 8-151] case item 12'b001100000100 is unreachable [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/csr_file.v:785]
+WARNING: [Synth 8-151] case item 12'b110000000000 is unreachable [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/csr_file.v:785]
+INFO: [Synth 8-6155] done synthesizing module 'csr_file' (16#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/csr_file.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'core_top' (17#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/core_top.v:80]
+INFO: [Synth 8-6157] synthesizing module 'sram_dp' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/sram_dp.v:56]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter N_ENTRIES bound to: 16384 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'bootrom.mem' is read successfully [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/sram_dp.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'sram_dp' (18#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/sram_dp.v:56]
+INFO: [Synth 8-6157] synthesizing module 'clint' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/clint.v:56]
+	Parameter TIMER bound to: 50000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'clint' (19#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/clint.v:56]
+INFO: [Synth 8-6157] synthesizing module 'atomic_unit' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/atomic_unit.v:55]
+WARNING: [Synth 8-151] case item 2'b10 is unreachable [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/atomic_unit.v:178]
+INFO: [Synth 8-6155] done synthesizing module 'atomic_unit' (20#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/atomic_unit.v:55]
+INFO: [Synth 8-6157] synthesizing module 'icache' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/icache.v:61]
+	Parameter XLEN bound to: 32 - type: integer 
+	Parameter CACHE_SIZE bound to: 2 - type: integer 
+	Parameter CLSIZE bound to: 128 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sram' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/sram.v:56]
+	Parameter DATA_WIDTH bound to: 128 - type: integer 
+	Parameter N_ENTRIES bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sram' (21#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/sram.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'icache' (22#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/icache.v:61]
+INFO: [Synth 8-6157] synthesizing module 'dcache' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/dcache.v:63]
+	Parameter XLEN bound to: 32 - type: integer 
+	Parameter CACHE_SIZE bound to: 2 - type: integer 
+	Parameter CLSIZE bound to: 128 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sram__parameterized0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/sram.v:56]
+	Parameter DATA_WIDTH bound to: 23 - type: integer 
+	Parameter N_ENTRIES bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized0' (22#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/sram.v:56]
+INFO: [Synth 8-6155] done synthesizing module 'dcache' (23#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/dcache.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'aquila_top' (24#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/core_rtl/aquila_top.v:65]
+INFO: [Synth 8-6157] synthesizing module 'uart' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/uart.v:69]
+	Parameter BAUD bound to: 16'b0000000101101001 
+INFO: [Synth 8-251] Simulation break point hit! [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/uart.v:131]
+INFO: [Synth 8-251] Simulation finished. [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/uart.v:137]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (25#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/uart.v:69]
+INFO: [Synth 8-6157] synthesizing module 'axi_quad_spi_0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/axi_quad_spi_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'axi_quad_spi_0' (26#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/axi_quad_spi_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cdc_sync' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/cdc_sync.v:60]
+INFO: [Synth 8-6157] synthesizing module 'async_fifo_signal' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/async_fifo_signal_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'async_fifo_signal' (27#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/async_fifo_signal_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'async_fifo_addr' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/async_fifo_addr_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'async_fifo_addr' (28#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/async_fifo_addr_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'async_fifo_data' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/async_fifo_data_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'async_fifo_data' (29#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/async_fifo_data_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cdc_sync' (30#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/cdc_sync.v:60]
+INFO: [Synth 8-6157] synthesizing module 'mem_arbiter' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/mem_arbiter.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'mem_arbiter' (31#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/mem_arbiter.v:63]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/mig_7series_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (32#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/.Xil/Vivado-76643-chilin-Sabre-15KV8/realtime/mig_7series_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'device_temp' of module 'mig_7series_0' is unconnected for instance 'MIG' [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/soc_top.v:593]
+WARNING: [Synth 8-7023] instance 'MIG' of module 'mig_7series_0' has 40 connections declared, but only 39 given [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/soc_top.v:593]
+INFO: [Synth 8-6155] done synthesizing module 'soc_top' (33#1) [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/sources_1/imports/src/soc_top.v:62]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2473.633 ; gain = 0.000 ; free physical = 1188 ; free virtual = 7862
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2473.633 ; gain = 0.000 ; free physical = 1221 ; free virtual = 7894
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2473.633 ; gain = 0.000 ; free physical = 1221 ; free virtual = 7894
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2473.633 ; gain = 0.000 ; free physical = 1201 ; free virtual = 7875
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'MIG'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'MIG'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'Clock_Generator'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'Clock_Generator'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/IMEM_strobe'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/IMEM_strobe'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/DMEM_strobe'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/DMEM_strobe'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/DMEM_rw'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/DMEM_rw'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/IMEM_done'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/IMEM_done'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/DMEM_done'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_signal/async_fifo_signal/async_fifo_signal_in_context.xdc] for cell 'synchronizer/DMEM_done'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_data/async_fifo_data/async_fifo_data_in_context.xdc] for cell 'synchronizer/DMEM_wt_data'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_data/async_fifo_data/async_fifo_data_in_context.xdc] for cell 'synchronizer/DMEM_wt_data'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_data/async_fifo_data/async_fifo_data_in_context.xdc] for cell 'synchronizer/IMEM_rd_data'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_data/async_fifo_data/async_fifo_data_in_context.xdc] for cell 'synchronizer/IMEM_rd_data'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_data/async_fifo_data/async_fifo_data_in_context.xdc] for cell 'synchronizer/DMEM_rd_data'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_data/async_fifo_data/async_fifo_data_in_context.xdc] for cell 'synchronizer/DMEM_rd_data'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_addr/async_fifo_addr/async_fifo_addr_in_context.xdc] for cell 'synchronizer/IMEM_addr'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_addr/async_fifo_addr/async_fifo_addr_in_context.xdc] for cell 'synchronizer/IMEM_addr'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_addr/async_fifo_addr/async_fifo_addr_in_context.xdc] for cell 'synchronizer/DMEM_addr'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/async_fifo_addr/async_fifo_addr/async_fifo_addr_in_context.xdc] for cell 'synchronizer/DMEM_addr'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/axi_quad_spi_0/axi_quad_spi_0/axi_quad_spi_0_in_context.xdc] for cell 'SD_Card_Controller'
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/axi_quad_spi_0/axi_quad_spi_0/axi_quad_spi_0_in_context.xdc] for cell 'SD_Card_Controller'
+Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/constrs_1/imports/xdc/arty.xdc]
+Finished Parsing XDC File [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/constrs_1/imports/xdc/arty.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/chilin/emb/HW4/aquila_sd/aquila_sd.srcs/constrs_1/imports/xdc/arty.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2543.469 ; gain = 0.000 ; free physical = 1076 ; free virtual = 7749
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2543.469 ; gain = 0.000 ; free physical = 1076 ; free virtual = 7749
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2543.469 ; gain = 69.836 ; free physical = 1207 ; free virtual = 7880
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2543.469 ; gain = 69.836 ; free physical = 1207 ; free virtual = 7880
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 2).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 3).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[10]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[10]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[11]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[11]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[12]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[12]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 9).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[13]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 10).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[13]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 11).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 12).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 13).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[2]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 14).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[2]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 15).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[3]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 16).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[3]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 17).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[4]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 18).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[4]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 19).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[5]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 20).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[5]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 21).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[6]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 22).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[6]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 23).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[7]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 24).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[7]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 25).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[8]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 26).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[8]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 27).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_addr[9]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 28).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_addr[9]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 29).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ba[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 30).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ba[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 31).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ba[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 32).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ba[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 33).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ba[2]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 34).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ba[2]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 35).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cas_n. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 36).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cas_n. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 37).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_n[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 38).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ck_n[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 39).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ck_p[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 40).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ck_p[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 41).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cke[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 42).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cke[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 43).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_cs_n[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 44).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_cs_n[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 45).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dm[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 46).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dm[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 47).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dm[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 48).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dm[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 49).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 50).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 51).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[10]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 52).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[10]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 53).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[11]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 54).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[11]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 55).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[12]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 56).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[12]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 57).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[13]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 58).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[13]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 59).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[14]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 60).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[14]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 61).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[15]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 62).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[15]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 63).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 64).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 65).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[2]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 66).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[2]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 67).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[3]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 68).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[3]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 69).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[4]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 70).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[4]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 71).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[5]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 72).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[5]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 73).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[6]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 74).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[6]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 75).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[7]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 76).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[7]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 77).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[8]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 78).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[8]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 79).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dq[9]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 80).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dq[9]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 81).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dqs_n[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 82).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dqs_n[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 83).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dqs_n[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 84).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dqs_n[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 85).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dqs_p[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 86).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dqs_p[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 87).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_dqs_p[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 88).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_dqs_p[1]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 89).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_odt[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 90).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_odt[0]. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 91).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_ras_n. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 92).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_ras_n. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 93).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_reset_n. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 94).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_reset_n. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 95).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr3_we_n. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 96).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr3_we_n. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc, line 97).
+Applied set_property IO_BUFFER_TYPE = NONE for sysclk_i. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sysclk_i. (constraint file  /home/chilin/emb/HW4/aquila_sd/aquila_sd.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property KEEP_HIERARCHY = SOFT for MIG. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for Clock_Generator. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/DMEM_done. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/DMEM_rw. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/DMEM_strobe. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/IMEM_done. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/IMEM_strobe. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/DMEM_rd_data. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/DMEM_wt_data. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/IMEM_rd_data. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/DMEM_addr. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for synchronizer/IMEM_addr. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for SD_Card_Controller. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2543.469 ; gain = 69.836 ; free physical = 1207 ; free virtual = 7880
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'S_reg' in module 'muldiv'
+INFO: [Synth 8-802] inferred FSM for state register 'dS_reg' in module 'core_top'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'atomic_unit'
+INFO: [Synth 8-802] inferred FSM for state register 'S_reg' in module 'icache'
+INFO: [Synth 8-802] inferred FSM for state register 'S_reg' in module 'dcache'
+INFO: [Synth 8-802] inferred FSM for state register 'S_reg' in module 'mem_arbiter'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                            00001 |                              000
+                  S_CALC |                            10000 |                              001
+           S_SIGN_ADJUST |                            01000 |                              010
+                  S_DONE |                            00100 |                              011
+                 S_STALL |                            00010 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'S_reg' using encoding 'one-hot' in module 'muldiv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  d_IDLE |                               00 |                               00
+                  d_WAIT |                               01 |                               01
+                 d_STALL |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'dS_reg' using encoding 'sequential' in module 'core_top'
+WARNING: [Synth 8-6841] Block RAM (RAM_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+(address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired.)
+INFO: [Synth 8-3971] The signal "sram_dp:/RAM_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  Bypass |                               00 |                              000
+                   AmoRd |                               11 |                              001
+                   AmoWr |                               10 |                              010
+               AmoFinish |                               01 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'atomic_unit'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                               11 |                               00
+                    Next |                               01 |                               01
+               RdfromMem |                               10 |                               10
+         RdfromMemFinish |                               00 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'S_reg' using encoding 'sequential' in module 'icache'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                             0101 |                             0000
+                Analysis |                             0110 |                             0001
+              WbtoMemAll |                             0111 |                             0110
+        WbtoMemAllFinish |                             1000 |                             0111
+                 WbtoMem |                             0100 |                             0010
+           WbtoMemFinish |                             0000 |                             0011
+                   RdAmo |                             0001 |                             1000
+             RdAmoFinish |                             1001 |                             1001
+               RdfromMem |                             0010 |                             0100
+         RdfromMemFinish |                             0011 |                             0101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'S_reg' using encoding 'sequential' in module 'dcache'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    Idle |                       0000000010 |                             0000
+            I_RdfromeMem |                       0000100000 |                             0001
+        I_RdfromeMemWait |                       0000010000 |                             0010
+      I_RdfromeMemFinish |                       0000000001 |                             0011
+            D_WritetoMem |                       0001000000 |                             0111
+        D_WritetoMemWait |                       0010000000 |                             1000
+      D_WritetoMemFinish |                       0100000000 |                             1001
+            D_RdfromeMem |                       0000000100 |                             0100
+        D_RdfromeMemWait |                       0000001000 |                             0101
+      D_RdfromeMemFinish |                       1000000000 |                             0110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'S_reg' using encoding 'one-hot' in module 'mem_arbiter'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2543.469 ; gain = 69.836 ; free physical = 1198 ; free virtual = 7874
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   65 Bit       Adders := 1     
+	   2 Input   64 Bit       Adders := 1     
+	   2 Input   33 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 10    
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   3 Input    8 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 4     
++---XORs : 
+	   2 Input     32 Bit         XORs := 2     
+	   2 Input      4 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 4     
++---Registers : 
+	              128 Bit    Registers := 19    
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 4     
+	               32 Bit    Registers := 121   
+	               30 Bit    Registers := 1     
+	               28 Bit    Registers := 1     
+	               27 Bit    Registers := 2     
+	               23 Bit    Registers := 132   
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 10    
+	                4 Bit    Registers := 7     
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 110   
+	                1 Bit    Registers := 483   
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---RAMs : 
+	             512K Bit	(16384 X 32 bit)          RAMs := 1     
+	               4K Bit	(32 X 128 bit)          RAMs := 8     
+	              736 Bit	(32 X 23 bit)          RAMs := 4     
++---Muxes : 
+	   4 Input  128 Bit        Muxes := 5     
+	   2 Input  128 Bit        Muxes := 15    
+	   3 Input  128 Bit        Muxes := 1     
+	   2 Input   65 Bit        Muxes := 14    
+	   3 Input   65 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 3     
+	   5 Input   64 Bit        Muxes := 1     
+	   4 Input   64 Bit        Muxes := 1     
+	   2 Input   33 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 96    
+	   4 Input   32 Bit        Muxes := 18    
+	   5 Input   32 Bit        Muxes := 2     
+	   3 Input   32 Bit        Muxes := 3     
+	  20 Input   32 Bit        Muxes := 1     
+	   8 Input   32 Bit        Muxes := 1     
+	   4 Input   28 Bit        Muxes := 1     
+	   2 Input   27 Bit        Muxes := 3     
+	   2 Input   26 Bit        Muxes := 1     
+	   4 Input   23 Bit        Muxes := 3     
+	   2 Input   17 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 2     
+	  10 Input   10 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 9     
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 4     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 9     
+	  32 Input    5 Bit        Muxes := 2     
+	   5 Input    5 Bit        Muxes := 1     
+	  26 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 15    
+	   4 Input    4 Bit        Muxes := 2     
+	   7 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 2     
+	  10 Input    4 Bit        Muxes := 3     
+	  24 Input    4 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 6     
+	   3 Input    3 Bit        Muxes := 4     
+	   8 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 18    
+	   5 Input    2 Bit        Muxes := 3     
+	   3 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 1530  
+	   9 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 7     
+	   3 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP mul00, operation Mode is: A2*B2.
+DSP Report: register op_a_r_reg is absorbed into DSP mul00.
+DSP Report: register mul00 is absorbed into DSP mul00.
+DSP Report: operator mul00 is absorbed into DSP mul00.
+DSP Report: operator mul00 is absorbed into DSP mul00.
+DSP Report: Generating DSP mul0_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register op_b_r_reg is absorbed into DSP mul0_reg.
+DSP Report: register op_a_r_reg is absorbed into DSP mul0_reg.
+DSP Report: register mul0_reg is absorbed into DSP mul0_reg.
+DSP Report: operator mul00 is absorbed into DSP mul0_reg.
+DSP Report: operator mul00 is absorbed into DSP mul0_reg.
+DSP Report: Generating DSP mul00, operation Mode is: A2*B2.
+DSP Report: register mul00 is absorbed into DSP mul00.
+DSP Report: register mul00 is absorbed into DSP mul00.
+DSP Report: operator mul00 is absorbed into DSP mul00.
+DSP Report: operator mul00 is absorbed into DSP mul00.
+DSP Report: Generating DSP mul0_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register op_b_r_reg is absorbed into DSP mul0_reg.
+DSP Report: register mul0_reg is absorbed into DSP mul0_reg.
+DSP Report: register mul0_reg is absorbed into DSP mul0_reg.
+DSP Report: operator mul00 is absorbed into DSP mul0_reg.
+DSP Report: operator mul00 is absorbed into DSP mul0_reg.
+WARNING: [Synth 8-6841] Block RAM (TCM/RAM_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+(address width (14) is more than optimal threshold of 12. Implementing using BWWE will require more logic and timing would be suboptimal. Please use attribute ram_decomp = power if BWWE is desired.)
+INFO: [Synth 8-3971] The signal "soc_top/TCM/RAM_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:14 . Memory (MB): peak = 2543.469 ; gain = 69.836 ; free physical = 1113 ; free virtual = 7809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++----------------------+------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object                   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|soc_top               | TCM/RAM_reg                  | 16 K x 32(READ_FIRST)  | W | R | 16 K x 32(READ_FIRST)  | W | R | Port A and B     | 0      | 16     | 
+|Aquila_SoCi_2/D_Cache | genblk1[0].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/D_Cache | genblk1[1].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/D_Cache | genblk1[2].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/D_Cache | genblk1[3].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/I_Cache | genblk1[0].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/I_Cache | genblk1[1].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/I_Cache | genblk1[2].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/I_Cache | genblk1[3].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
++----------------------+------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------------------------------------+-----------------------------+-----------+----------------------+----------------+
+|Module Name                                      | RTL Object                  | Inference | Size (Depth x Width) | Primitives     | 
++-------------------------------------------------+-----------------------------+-----------+----------------------+----------------+
+|Aquila_SoCi_1/RISCV_CORE0/Branch_Prediction_Unit | bpu_pc_history/RAM_reg      | Implied   | 32 x 32              | RAM32M x 6     | 
+|Aquila_SoCi_2/D_Cache                            | genblk1[2].TAG_BRAM/RAM_reg | Implied   | 32 x 23              | RAM32X1S x 23  | 
+|Aquila_SoCi_2/D_Cache                            | genblk1[3].TAG_BRAM/RAM_reg | Implied   | 32 x 23              | RAM32X1S x 23  | 
+|Aquila_SoCi_2/D_Cache                            | genblk1[1].TAG_BRAM/RAM_reg | Implied   | 32 x 23              | RAM32X1S x 23  | 
+|Aquila_SoCi_2/D_Cache                            | genblk1[0].TAG_BRAM/RAM_reg | Implied   | 32 x 23              | RAM32X1S x 23  | 
++-------------------------------------------------+-----------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below)
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|muldiv      | A2*B2            | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|muldiv      | (PCIN>>17)+A2*B2 | 16     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|muldiv      | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|muldiv      | (PCIN>>17)+A2*B2 | 18     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:01:19 . Memory (MB): peak = 2543.469 ; gain = 69.836 ; free physical = 972 ; free virtual = 7668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:01:22 . Memory (MB): peak = 2543.469 ; gain = 69.836 ; free physical = 955 ; free virtual = 7651
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++----------------------+------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name           | RTL Object                   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------------+------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|soc_top               | TCM/RAM_reg                  | 16 K x 32(READ_FIRST)  | W | R | 16 K x 32(READ_FIRST)  | W | R | Port A and B     | 0      | 16     | 
+|Aquila_SoCi_2/D_Cache | genblk1[0].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/D_Cache | genblk1[1].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/D_Cache | genblk1[2].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/D_Cache | genblk1[3].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/I_Cache | genblk1[0].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/I_Cache | genblk1[1].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/I_Cache | genblk1[2].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
+|Aquila_SoCi_2/I_Cache | genblk1[3].DATA_BRAM/RAM_reg | 32 x 128(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 2      | 
++----------------------+------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++-------------------------------------------------+-----------------------------+-----------+----------------------+----------------+
+|Module Name                                      | RTL Object                  | Inference | Size (Depth x Width) | Primitives     | 
++-------------------------------------------------+-----------------------------+-----------+----------------------+----------------+
+|Aquila_SoCi_1/RISCV_CORE0/Branch_Prediction_Unit | bpu_pc_history/RAM_reg      | Implied   | 32 x 32              | RAM32M x 6     | 
+|Aquila_SoCi_2/D_Cache                            | genblk1[2].TAG_BRAM/RAM_reg | Implied   | 32 x 23              | RAM32X1S x 23  | 
+|Aquila_SoCi_2/D_Cache                            | genblk1[3].TAG_BRAM/RAM_reg | Implied   | 32 x 23              | RAM32X1S x 23  | 
+|Aquila_SoCi_2/D_Cache                            | genblk1[1].TAG_BRAM/RAM_reg | Implied   | 32 x 23              | RAM32X1S x 23  | 
+|Aquila_SoCi_2/D_Cache                            | genblk1[0].TAG_BRAM/RAM_reg | Implied   | 32 x 23              | RAM32X1S x 23  | 
++-------------------------------------------------+-----------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_2_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/TCM/RAM_reg_3_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[0].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[0].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[0].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[0].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[1].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[1].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[1].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[1].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[2].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[2].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[2].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[2].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[3].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[3].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[3].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/D_Cache/genblk1[3].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[0].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[0].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[0].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[0].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[1].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[1].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[1].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[1].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[2].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[2].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[2].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[2].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[3].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[3].DATA_BRAM/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[3].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance Aquila_SoC/I_Cache/genblk1[3].DATA_BRAM/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:27 ; elapsed = 00:01:29 . Memory (MB): peak = 2586.570 ; gain = 112.938 ; free physical = 956 ; free virtual = 7652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 2586.570 ; gain = 112.938 ; free physical = 955 ; free virtual = 7651
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 2586.570 ; gain = 112.938 ; free physical = 955 ; free virtual = 7651
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 2586.570 ; gain = 112.938 ; free physical = 954 ; free virtual = 7650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:31 ; elapsed = 00:01:33 . Memory (MB): peak = 2586.570 ; gain = 112.938 ; free physical = 954 ; free virtual = 7650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 2586.570 ; gain = 112.938 ; free physical = 954 ; free virtual = 7650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 2586.570 ; gain = 112.938 ; free physical = 954 ; free virtual = 7650
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------+----------+
+|      |BlackBox name     |Instances |
++------+------------------+----------+
+|1     |clk_wiz_0         |         1|
+|2     |axi_quad_spi_0    |         1|
+|3     |mig_7series_0     |         1|
+|4     |async_fifo_signal |         5|
+|5     |async_fifo_addr   |         2|
+|6     |async_fifo_data   |         3|
++------+------------------+----------+
+
+Report Cell Usage: 
++------+------------------+------+
+|      |Cell              |Count |
++------+------------------+------+
+|1     |async_fifo_addr   |     2|
+|3     |async_fifo_data   |     3|
+|6     |async_fifo_signal |     5|
+|11    |axi_quad_spi      |     1|
+|12    |clk_wiz           |     1|
+|13    |mig_7series       |     1|
+|14    |BUFG              |     1|
+|15    |CARRY4            |   441|
+|16    |DSP48E1           |     4|
+|18    |LUT1              |   279|
+|19    |LUT2              |   831|
+|20    |LUT3              |  1067|
+|21    |LUT4              |  1472|
+|22    |LUT5              |  1421|
+|23    |LUT6              |  5972|
+|24    |MUXF7             |   697|
+|25    |MUXF8             |   261|
+|26    |RAM32M            |     5|
+|27    |RAM32X1D          |     2|
+|28    |RAM32X1S          |    92|
+|29    |RAMB36E1          |    32|
+|46    |FDRE              |  9435|
+|47    |FDSE              |    28|
+|48    |IBUF              |     3|
+|49    |OBUF              |     4|
+|50    |OBUFT             |     4|
++------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 2586.570 ; gain = 112.938 ; free physical = 954 ; free virtual = 7650
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:29 ; elapsed = 00:01:31 . Memory (MB): peak = 2586.570 ; gain = 43.102 ; free physical = 1016 ; free virtual = 7712
+Synthesis Optimization Complete : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 2586.578 ; gain = 112.938 ; free physical = 1016 ; free virtual = 7712
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2586.578 ; gain = 0.000 ; free physical = 1100 ; free virtual = 7796
+INFO: [Netlist 29-17] Analyzing 1534 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2618.586 ; gain = 0.000 ; free physical = 1039 ; free virtual = 7735
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 99 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 5 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
+  RAM32X1S => RAM32X1S (RAMS32): 92 instances
+
+Synth Design complete, checksum: fa70679f
+INFO: [Common 17-83] Releasing license: Synthesis
+164 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:42 ; elapsed = 00:01:39 . Memory (MB): peak = 2618.586 ; gain = 145.086 ; free physical = 1222 ; free virtual = 7918
+INFO: [Common 17-1381] The checkpoint '/home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/synth_1/soc_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file soc_top_utilization_synth.rpt -pb soc_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Dec  5 14:41:40 2021...
