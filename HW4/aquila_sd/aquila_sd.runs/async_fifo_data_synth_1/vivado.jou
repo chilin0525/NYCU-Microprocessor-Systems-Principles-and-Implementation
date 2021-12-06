@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Dec  4 22:46:56 2021
+# Process ID: 96628
+# Current directory: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/async_fifo_data_synth_1
+# Command line: vivado -log async_fifo_data.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source async_fifo_data.tcl
+# Log file: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/async_fifo_data_synth_1/async_fifo_data.vds
+# Journal file: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/async_fifo_data_synth_1/vivado.jou
+#-----------------------------------------------------------
+source async_fifo_data.tcl -notrace

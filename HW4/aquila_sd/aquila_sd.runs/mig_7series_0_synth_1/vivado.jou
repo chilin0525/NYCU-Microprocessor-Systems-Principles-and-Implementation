@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Dec  4 22:46:56 2021
+# Process ID: 96624
+# Current directory: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/mig_7series_0_synth_1
+# Command line: vivado -log mig_7series_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mig_7series_0.tcl
+# Log file: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/mig_7series_0_synth_1/mig_7series_0.vds
+# Journal file: /home/chilin/emb/HW4/aquila_sd/aquila_sd.runs/mig_7series_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source mig_7series_0.tcl -notrace
